@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.1">
+<file name="C:\OPENHABDEV\openhab2-master2\git\openhab2-addons\addons\binding\org.openhab.binding.emby\.classpath">
+</file>
+<file name="C:\OPENHABDEV\openhab2-master2\git\openhab2-addons\addons\binding\org.openhab.binding.emby\about.html">
+<error line="0" severity="info" message="File does not end with a newline." source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
+</file>
+<file name="C:\OPENHABDEV\openhab2-master2\git\openhab2-addons\addons\binding\org.openhab.binding.emby\build.properties">
+<error line="0" severity="info" message="File does not end with a newline." source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
+</file>
+<file name="C:\OPENHABDEV\openhab2-master2\git\openhab2-addons\addons\binding\org.openhab.binding.emby\ESH-INF\binding\binding.xml">
+</file>
+<file name="C:\OPENHABDEV\openhab2-master2\git\openhab2-addons\addons\binding\org.openhab.binding.emby\ESH-INF\thing\thing-types.xml">
+<error line="13" severity="warning" message="There were whitespace characters used for indentation. Please use tab characters instead" source="org.openhab.tools.analysis.checkstyle.OnlyTabIndentationInXmlFilesCheck"/>
+</file>
+<file name="C:\OPENHABDEV\openhab2-master2\git\openhab2-addons\addons\binding\org.openhab.binding.emby\META-INF\MANIFEST.MF">
+<error line="44" severity="warning" message="The exported package `org.openhab.binding.emby` is not imported" source="org.openhab.tools.analysis.checkstyle.ImportExportedPackagesCheck"/>
+</file>
+<file name="C:\OPENHABDEV\openhab2-master2\git\openhab2-addons\addons\binding\org.openhab.binding.emby\OSGI-INF\.gitignore">
+</file>
+<file name="C:\OPENHABDEV\openhab2-master2\git\openhab2-addons\addons\binding\org.openhab.binding.emby\OSGI-INF\org.openhab.binding.emby.internal.EmbyHandlerFactory.xml">
+</file>
+<file name="C:\OPENHABDEV\openhab2-master2\git\openhab2-addons\addons\binding\org.openhab.binding.emby\pom.xml">
+</file>
+<file name="C:\OPENHABDEV\openhab2-master2\git\openhab2-addons\addons\binding\org.openhab.binding.emby\README.md">
+<error line="0" severity="info" message="File does not end with a newline." source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
+</file>
+<file name="C:\OPENHABDEV\openhab2-master2\git\openhab2-addons\addons\binding\org.openhab.binding.emby\src\main\java\org\openhab\binding\emby\EmbyBindingConstants.java">
+</file>
+<file name="C:\OPENHABDEV\openhab2-master2\git\openhab2-addons\addons\binding\org.openhab.binding.emby\src\main\java\org\openhab\binding\emby\internal\EmbyConfiguration.java">
+</file>
+<file name="C:\OPENHABDEV\openhab2-master2\git\openhab2-addons\addons\binding\org.openhab.binding.emby\src\main\java\org\openhab\binding\emby\internal\EmbyEventListener.java">
+<error line="0" severity="info" message="File does not end with a newline." source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
+<error line="20" severity="warning" message="First javadoc author should have &quot;Initial contribution&quot; contribution description." source="org.openhab.tools.analysis.checkstyle.AuthorContributionDescriptionCheck"/>
+</file>
+<file name="C:\OPENHABDEV\openhab2-master2\git\openhab2-addons\addons\binding\org.openhab.binding.emby\src\main\java\org\openhab\binding\emby\internal\EmbyHandler.java">
+<error line="79" severity="info" message="Comment matches to-do format &apos;(TODO)|(FIXME)&apos;." source="com.puppycrawl.tools.checkstyle.checks.TodoCommentCheck"/>
+<error line="82" severity="info" message="Comment matches to-do format &apos;(TODO)|(FIXME)&apos;." source="com.puppycrawl.tools.checkstyle.checks.TodoCommentCheck"/>
+<error line="127" severity="info" message="Remove empty line before closing brace" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+<error line="135" severity="info" message="Remove empty line before closing brace" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+<error line="143" severity="info" message="Remove empty line after opening brace" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+</file>
+<file name="C:\OPENHABDEV\openhab2-master2\git\openhab2-addons\addons\binding\org.openhab.binding.emby\src\main\java\org\openhab\binding\emby\internal\EmbyHandlerFactory.java">
+</file>
+<file name="C:\OPENHABDEV\openhab2-master2\git\openhab2-addons\addons\binding\org.openhab.binding.emby\src\main\java\org\openhab\binding\emby\internal\model\EmbyDuration.java">
+<error line="0" severity="info" message="File does not end with a newline." source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
+</file>
+<file name="C:\OPENHABDEV\openhab2-master2\git\openhab2-addons\addons\binding\org.openhab.binding.emby\src\main\java\org\openhab\binding\emby\internal\model\embyPlayState.java">
+<error line="0" severity="info" message="File does not end with a newline." source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
+<error line="18" severity="warning" message="First javadoc author should have &quot;Initial contribution&quot; contribution description." source="org.openhab.tools.analysis.checkstyle.AuthorContributionDescriptionCheck"/>
+<error line="21" column="14" severity="info" message="Name &apos;embyPlayState&apos; must match pattern &apos;^[A-Z][a-zA-Z0-9]*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.TypeNameCheck"/>
+</file>
+<file name="C:\OPENHABDEV\openhab2-master2\git\openhab2-addons\addons\binding\org.openhab.binding.emby\src\main\java\org\openhab\binding\emby\internal\model\EmbyPlayStateModel.java">
+<error line="0" severity="info" message="File does not end with a newline." source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
+<error line="75" severity="info" message="Remove empty line" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+<error line="89" severity="info" message="Remove empty line" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+</file>
+<file name="C:\OPENHABDEV\openhab2-master2\git\openhab2-addons\addons\binding\org.openhab.binding.emby\src\main\java\org\openhab\binding\emby\internal\model\nowPlayingItem.java">
+<error line="0" severity="info" message="File does not end with a newline." source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
+<error line="18" severity="warning" message="First javadoc author should have &quot;Initial contribution&quot; contribution description." source="org.openhab.tools.analysis.checkstyle.AuthorContributionDescriptionCheck"/>
+<error line="21" column="14" severity="info" message="Name &apos;nowPlayingItem&apos; must match pattern &apos;^[A-Z][a-zA-Z0-9]*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.TypeNameCheck"/>
+<error line="42" severity="info" message="Remove empty line" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+</file>
+<file name="C:\OPENHABDEV\openhab2-master2\git\openhab2-addons\addons\binding\org.openhab.binding.emby\src\main\java\org\openhab\binding\emby\internal\protocol\EmbyClientSocket.java">
+<error line="0" severity="info" message="File does not end with a newline." source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
+<error line="41" severity="warning" message="First javadoc author should have &quot;Initial contribution&quot; contribution description." source="org.openhab.tools.analysis.checkstyle.AuthorContributionDescriptionCheck"/>
+<error line="196" severity="info" message="Remove empty line" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+<error line="210" severity="info" message="Remove empty line" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+</file>
+<file name="C:\OPENHABDEV\openhab2-master2\git\openhab2-addons\addons\binding\org.openhab.binding.emby\src\main\java\org\openhab\binding\emby\internal\protocol\EmbyClientSocketEventListener.java">
+<error line="0" severity="info" message="File does not end with a newline." source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
+<error line="16" severity="warning" message="First javadoc author should have &quot;Initial contribution&quot; contribution description." source="org.openhab.tools.analysis.checkstyle.AuthorContributionDescriptionCheck"/>
+</file>
+<file name="C:\OPENHABDEV\openhab2-master2\git\openhab2-addons\addons\binding\org.openhab.binding.emby\src\main\java\org\openhab\binding\emby\internal\protocol\EmbyConnection.java">
+<error line="0" severity="info" message="File does not end with a newline." source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
+<error line="38" severity="warning" message="First javadoc author should have &quot;Initial contribution&quot; contribution description." source="org.openhab.tools.analysis.checkstyle.AuthorContributionDescriptionCheck"/>
+<error line="156" severity="info" message="Remove empty line" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+<error line="168" severity="info" message="Remove empty line" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+<error line="191" severity="info" message="Remove empty line" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+</file>
+</checkstyle>
