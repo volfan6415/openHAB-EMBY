@@ -25,10 +25,10 @@ under the License.
     <language>en-us</language>
     <copyright>&#169;2018 openHAB.org</copyright>
     <item>
-      <title>File: 22,
+      <title>File: 29,
              Errors: 0,
              Warnings: 8,
-             Infos: 26
+             Infos: 38
       </title>
             <link>${project.url}/checkstyle.html</link>
       <description>
@@ -46,10 +46,10 @@ under the License.
           <tbody>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#about.html">about.html</a>
+                  <a href="${project.url}/checkstyle.html#src.main.java.org.openhab.binding.emby.internal.discovery.EmbyClientDiscoveryService.java">src/main/java/org/openhab/binding/emby/internal/discovery/EmbyClientDiscoveryService.java</a>
                 </td>
                 <td>
-                  1
+                  2
                 </td>
                 <td>
                   0
@@ -74,7 +74,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#src.main.java.org.openhab.binding.emby.internal.EmbyConfiguration.java">src/main/java/org/openhab/binding/emby/internal/EmbyConfiguration.java</a>
+                  <a href="${project.url}/checkstyle.html#OSGI-INF.org.openhab.binding.emby.internal.discovery.EmbyClientDiscoveryService.xml">OSGI-INF/org.openhab.binding.emby.internal.discovery.EmbyClientDiscoveryService.xml</a>
                 </td>
                 <td>
                   0
@@ -102,49 +102,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#src.main.java.org.openhab.binding.emby.internal.protocol.EmbyClientSocket.java">src/main/java/org/openhab/binding/emby/internal/protocol/EmbyClientSocket.java</a>
-                </td>
-                <td>
-                  3
-                </td>
-                <td>
-                  1
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#src.main.java.org.openhab.binding.emby.internal.model.nowPlayingItem.java">src/main/java/org/openhab/binding/emby/internal/model/nowPlayingItem.java</a>
-                </td>
-                <td>
-                  3
-                </td>
-                <td>
-                  1
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="${project.url}/checkstyle.html#src.main.java.org.openhab.binding.emby.internal.EmbyHandlerFactory.java">src/main/java/org/openhab/binding/emby/internal/EmbyHandlerFactory.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#src.main.java.org.openhab.binding.emby.EmbyBindingConstants.java">src/main/java/org/openhab/binding/emby/EmbyBindingConstants.java</a>
                 </td>
                 <td>
                   0
@@ -161,10 +119,24 @@ under the License.
                   <a href="${project.url}/checkstyle.html#src.main.java.org.openhab.binding.emby.internal.protocol.EmbyConnection.java">src/main/java/org/openhab/binding/emby/internal/protocol/EmbyConnection.java</a>
                 </td>
                 <td>
-                  4
+                  1
                 </td>
                 <td>
                   1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#src.main.java.org.openhab.binding.emby.internal.handler.EmbyBridgeHandler.java">src/main/java/org/openhab/binding/emby/internal/handler/EmbyBridgeHandler.java</a>
+                </td>
+                <td>
+                  6
+                </td>
+                <td>
+                  0
                 </td>
                 <td>
                   0
@@ -200,10 +172,10 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#README.md">README.md</a>
+                  <a href="${project.url}/checkstyle.html#src.main.java.org.openhab.binding.emby.internal.EmbyDeviceConfiguration.java">src/main/java/org/openhab/binding/emby/internal/EmbyDeviceConfiguration.java</a>
                 </td>
                 <td>
-                  1
+                  0
                 </td>
                 <td>
                   0
@@ -214,10 +186,10 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#src.main.java.org.openhab.binding.emby.internal.EmbyHandler.java">src/main/java/org/openhab/binding/emby/internal/EmbyHandler.java</a>
+                  <a href="${project.url}/checkstyle.html#src.main.java.org.openhab.binding.emby.internal.EmbyBridgeConfiguration.java">src/main/java/org/openhab/binding/emby/internal/EmbyBridgeConfiguration.java</a>
                 </td>
                 <td>
-                  5
+                  0
                 </td>
                 <td>
                   0
@@ -256,20 +228,6 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#src.main.java.org.openhab.binding.emby.internal.model.EmbyPlayStateModel.java">src/main/java/org/openhab/binding/emby/internal/model/EmbyPlayStateModel.java</a>
-                </td>
-                <td>
-                  3
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="${project.url}/checkstyle.html#src.main.java.org.openhab.binding.emby.internal.protocol.EmbyClientSocketEventListener.java">src/main/java/org/openhab/binding/emby/internal/protocol/EmbyClientSocketEventListener.java</a>
                 </td>
                 <td>
@@ -291,6 +249,132 @@ under the License.
                 </td>
                 <td>
                   1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#META-INF.MANIFEST.MF">META-INF/MANIFEST.MF</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#about.html">about.html</a>
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#src.main.java.org.openhab.binding.emby.internal.protocol.EmbyClientSocket.java">src/main/java/org/openhab/binding/emby/internal/protocol/EmbyClientSocket.java</a>
+                </td>
+                <td>
+                  3
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#src.main.java.org.openhab.binding.emby.internal.model.nowPlayingItem.java">src/main/java/org/openhab/binding/emby/internal/model/nowPlayingItem.java</a>
+                </td>
+                <td>
+                  3
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#src.main.java.org.openhab.binding.emby.EmbyBindingConstants.java">src/main/java/org/openhab/binding/emby/EmbyBindingConstants.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#README.md">README.md</a>
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#src.main.java.org.openhab.binding.emby.internal.discovery.EmbyDiscoveryService.java">src/main/java/org/openhab/binding/emby/internal/discovery/EmbyDiscoveryService.java</a>
+                </td>
+                <td>
+                  4
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#src.main.java.org.openhab.binding.emby.internal.EmbyBridgeListener.java">src/main/java/org/openhab/binding/emby/internal/EmbyBridgeListener.java</a>
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#src.main.java.org.openhab.binding.emby.internal.model.EmbyPlayStateModel.java">src/main/java/org/openhab/binding/emby/internal/model/EmbyPlayStateModel.java</a>
+                </td>
+                <td>
+                  2
+                </td>
+                <td>
+                  0
                 </td>
                 <td>
                   0
@@ -326,13 +410,13 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#ESH-INF.thing.thing-types.xml">ESH-INF/thing/thing-types.xml</a>
+                  <a href="${project.url}/checkstyle.html#src.main.java.org.openhab.binding.emby.internal.handler.EmbyDeviceHandler.java">src/main/java/org/openhab/binding/emby/internal/handler/EmbyDeviceHandler.java</a>
+                </td>
+                <td>
+                  8
                 </td>
                 <td>
                   0
-                </td>
-                <td>
-                  1
                 </td>
                 <td>
                   0
@@ -340,13 +424,27 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#META-INF.MANIFEST.MF">META-INF/MANIFEST.MF</a>
+                  <a href="${project.url}/checkstyle.html#ESH-INF.thing.thing-types.xml">ESH-INF/thing/thing-types.xml</a>
                 </td>
                 <td>
                   0
                 </td>
                 <td>
-                  1
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#OSGI-INF.org.openhab.binding.emby.internal.discovery.EmbyDiscoveryService.xml">OSGI-INF/org.openhab.binding.emby.internal.discovery.EmbyDiscoveryService.xml</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
                 </td>
                 <td>
                   0

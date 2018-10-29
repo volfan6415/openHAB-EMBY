@@ -23,7 +23,8 @@ public class EmbyBindingConstants {
     private static final String BINDING_ID = "emby";
 
     // List of all Thing Type UIDs
-    public static final ThingTypeUID THING_TYPE_EMBY = new ThingTypeUID(BINDING_ID, "device");
+    public static final ThingTypeUID THING_TYPE_EMBY_CONTROLLER = new ThingTypeUID(BINDING_ID, "controller");
+    public static final ThingTypeUID THING_TYPE_EMBY_DEVICE = new ThingTypeUID(BINDING_ID, "device");
 
     // List of all Channel ids
     public static final String CHANNEL_MUTE = "mute";
@@ -56,6 +57,7 @@ public class EmbyBindingConstants {
     public static final String CHANNEL_CURRENTTIMEPERCENTAGE = "currenttimepercentage";
     public static final String CHANNEL_DURATION = "duration";
     public static final String CHANNEL_IMAGEURL = "imageurl";
+    public static final String CHANNEL_IMAGEURL_TYPE = "imageurl_type";
 
     // Module Properties
     public static final String PROPERTY_VERSION = "version";

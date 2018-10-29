@@ -60,7 +60,6 @@ public class EmbyPlayStateModel {
 
     public String getNowPlayingName() {
         return this.nowPlayingItem.getName();
-
     }
 
     public BigDecimal getNowPlayingTime() {
@@ -72,13 +71,11 @@ public class EmbyPlayStateModel {
     }
 
     public Boolean compareDeviceId(String compareId) {
-
         try {
             return deviceId.equals(compareId);
         } catch (NullPointerException e) {
             return false;
         }
-
     }
 
     /**
@@ -134,14 +131,14 @@ public class EmbyPlayStateModel {
         return supportsRemoteControl;
     }
 
-    public URI getPrimaryImageURL(String api, String embyHost, int embyPort) throws URISyntaxException {
+    public URI getPrimaryImageURL(String embyHost, int embyPort, String embyType) throws URISyntaxException {
         String imagePath = "";
         try {
             if (!(this.nowPlayingItem.getSeasonId() == null)) {
                 // if its a TV Series use that instead of ID for image
-                imagePath = "/emby/items/" + this.nowPlayingItem.getSeasonId() + "/Images/Primary";
+                imagePath = "/emby/items/" + this.nowPlayingItem.getSeasonId() + "/Images/" + embyType;
             } else {
-                imagePath = "/emby/items/" + this.nowPlayingItem.getId() + "/Images/Primary";
+                imagePath = "/emby/items/" + this.nowPlayingItem.getId() + "/Images/" + embyType;
             }
 
             BigDecimal percentPlayedRounded = getPercentPlayed();

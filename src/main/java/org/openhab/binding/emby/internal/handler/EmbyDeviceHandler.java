@@ -19,13 +19,15 @@
  *
  * SPDX-License-Identifier: EPL-2.0
  */
-package org.openhab.binding.emby.internal;
+package org.openhab.binding.emby.internal.handler;
 
+import static org.eclipse.smarthome.core.thing.ThingStatus.OFFLINE;
+import static org.eclipse.smarthome.core.thing.ThingStatusDetail.*;
 import static org.openhab.binding.emby.EmbyBindingConstants.*;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.List;
-import java.util.concurrent.ScheduledFuture;
-import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 import javax.measure.Unit;
@@ -37,6 +39,7 @@ import org.eclipse.smarthome.core.library.types.RawType;
 import org.eclipse.smarthome.core.library.types.RewindFastforwardType;
 import org.eclipse.smarthome.core.library.types.StringType;
 import org.eclipse.smarthome.core.library.unit.SmartHomeUnits;
+import org.eclipse.smarthome.core.thing.Bridge;
 import org.eclipse.smarthome.core.thing.ChannelUID;
 import org.eclipse.smarthome.core.thing.Thing;
 import org.eclipse.smarthome.core.thing.ThingStatus;
@@ -45,31 +48,27 @@ import org.eclipse.smarthome.core.thing.binding.BaseThingHandler;
 import org.eclipse.smarthome.core.types.Command;
 import org.eclipse.smarthome.core.types.State;
 import org.eclipse.smarthome.core.types.UnDefType;
-import org.openhab.binding.emby.internal.protocol.EmbyConnection;
+import org.openhab.binding.emby.internal.EmbyDeviceConfiguration;
+import org.openhab.binding.emby.internal.EmbyEventListener;
+import org.openhab.binding.emby.internal.model.EmbyPlayStateModel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * The {@link EmbyHandler} is responsible for handling commands, which are
+ * The {@link EmbyDeviceHandler} is responsible for handling commands, which are
  * sent to one of the channels.
  *
  * @author Zachary Christiansen - Initial contribution
  */
 
-public class EmbyHandler extends BaseThingHandler implements EmbyEventListener {
+public class EmbyDeviceHandler extends BaseThingHandler implements EmbyEventListener {
 
-    private final Logger logger = LoggerFactory.getLogger(EmbyHandler.class);
+    private final Logger logger = LoggerFactory.getLogger(EmbyDeviceHandler.class);
 
-    private EmbyConfiguration config;
-    private final EmbyConnection connection;
-    private ScheduledFuture<?> connectionCheckerFuture;
-    private String callbackIpAddress = null;
+    private EmbyDeviceConfiguration config;
 
-    public EmbyHandler(Thing thing, String hostAddress, String port) {
+    public EmbyDeviceHandler(Thing thing) {
         super(thing);
-        connection = new EmbyConnection(this);
-        callbackIpAddress = hostAddress + ":" + port;
-        logger.debug("The callback ip address is: {}", callbackIpAddress);
     }
 
     @Override
@@ -88,51 +87,22 @@ public class EmbyHandler extends BaseThingHandler implements EmbyEventListener {
         // }
     }
 
-    private int getIntConfigParameter(String key, int defaultValue) {
-        Object obj = this.getConfig().get(key);
-        if (obj instanceof Number) {
-            return ((Number) obj).intValue();
-        } else if (obj instanceof String) {
-            return Integer.parseInt(obj.toString());
-        }
-        return defaultValue;
-    }
-
     @Override
     public void initialize() {
-        config = getConfigAs(EmbyConfiguration.class);
+        logger.debug("Initializing emby device: {}", this.getThing().getLabel());
+        config = getConfigAs(EmbyDeviceConfiguration.class);
         updateStatus(ThingStatus.UNKNOWN);
-        // Example for background initialization:
-        scheduler.execute(() -> {
-            try {
-                String host = getConfig().get(HOST_PARAMETER).toString();
-                if (host == null || host.isEmpty()) {
-                    updateStatus(ThingStatus.OFFLINE, ThingStatusDetail.CONFIGURATION_ERROR,
-                            "No network address specified");
-                } else {
-                    connection.connect(host, getIntConfigParameter(WS_PORT_PARAMETER, 8096),
-                            (String) this.getConfig().get(DEVICE_ID), (String) this.getConfig().get(API_KEY), scheduler,
-                            getIntConfigParameter(REFRESH_PARAMETER, 10000));
+        Bridge bridge = getBridge();
+        if (bridge == null || bridge.getHandler() == null || !(bridge.getHandler() instanceof EmbyBridgeHandler)) {
+            updateStatus(OFFLINE, CONFIGURATION_ERROR, "You must choose a Emby Server for this Device.");
+            return;
+        }
 
-                    connectionCheckerFuture = scheduler.scheduleWithFixedDelay(() -> {
-                        if (connection.checkConnection()) {
-                            // updateFavoriteChannelStateDescription();
-                            // updatePVRChannelStateDescription(PVR_TV, CHANNEL_PVR_OPEN_TV);
-                            // updatePVRChannelStateDescription(PVR_RADIO, CHANNEL_PVR_OPEN_RADIO);
-                        } else {
-                            updateStatus(ThingStatus.OFFLINE, ThingStatusDetail.COMMUNICATION_ERROR,
-                                    "Connection could not be established");
-                        }
-                    }, 1, getIntConfigParameter(REFRESH_PARAMETER, 10), TimeUnit.SECONDS);
-
-                }
-            } catch (Exception e) {
-                logger.debug("error during opening connection: {}", e.getMessage(), e);
-                updateStatus(ThingStatus.OFFLINE, ThingStatusDetail.COMMUNICATION_ERROR, e.getLocalizedMessage());
-            }
-
-        });
-
+        if (bridge.getStatus() == OFFLINE) {
+            updateStatus(OFFLINE, BRIDGE_OFFLINE, "The Emby Server is currently offline.");
+            return;
+        }
+        updateStatus(ThingStatus.ONLINE);
     }
 
     @Override
@@ -270,6 +240,82 @@ public class EmbyHandler extends BaseThingHandler implements EmbyEventListener {
 
     private State createQuantityState(Number value, Unit<?> unit) {
         return (value == null) ? UnDefType.UNDEF : new QuantityType<>(value, unit);
+    }
+
+    private void updateState(EmbyState state) {
+
+        updatePlayerState(state);
+        // if this is a Stop then clear everything else
+        if (state == EmbyState.STOP) {
+            // listener.updateAlbum("");
+            updateTitle("");
+            updateShowTitle("");
+            // listener.updateArtistList(null);
+            updateMediaType("");
+            // listener.updateGenreList(null);
+            // listener.updatePVRChannel("");
+            updateThumbnail(null);
+            updateFanart(null);
+            updateCurrentTimePercentage(-1);
+            updateCurrentTime(-1);
+            updateDuration(-1);
+        }
+
+    }
+
+    @Override
+    public void handleEvent(EmbyPlayStateModel playstate, String hostname, int embyport) {
+        // check the deviceId of this handler against the deviceId of the event to see if it matches
+        if (playstate.compareDeviceId(config.deviceID)) {
+
+            logger.debug("the deviceId for: {} matches the deviceId of the thing so we will update stringUrl",
+                    playstate.getDeviceName());
+
+            String imageType = this.thing.getChannel(CHANNEL_IMAGEURL).getConfiguration().get(CHANNEL_IMAGEURL_TYPE)
+                    .toString();
+
+            if (imageType == null) {
+                // if this for some reason has not been set then set it to primary to avoid null pointer access
+                imageType = "Primary";
+            }
+
+            try {
+
+                URI imageURI = playstate.getPrimaryImageURL(hostname, embyport, imageType);
+
+                if (imageURI.getHost().equals("NotPlaying")) {
+                    updateState(EmbyState.END);
+                    updatePrimaryImageURL("");
+                    updateShowTitle("");
+                } else {
+
+                    updatePrimaryImageURL(imageURI.toString());
+                    updateMuted(playstate.getEmbyMuteSate());
+                    updateShowTitle(playstate.getNowPlayingName());
+                    updateCurrentTime(playstate.getNowPlayingTime().longValue());
+                    updateDuration(playstate.getNowPlayingTotalTime().longValue());
+                }
+
+            } catch (URISyntaxException e) {
+                logger.debug("unable to create image url for: {} due to exception: {} ", playstate.getDeviceName(),
+                        e.toString());
+            }
+
+            if (playstate.getEmbyPlayStatePausedState()) {
+                updateState(EmbyState.PAUSE);
+            } else {
+                updateState(EmbyState.PLAY);
+
+            }
+
+        }
+
+        else {
+
+            logger.debug("{} does not equal {} the event is for device named: {} ", playstate.getDeviceId(),
+                    config.deviceID, playstate.getDeviceName());
+        }
+
     }
 
 }

@@ -11,6 +11,7 @@ package org.openhab.binding.emby.internal;
 import java.util.EventListener;
 
 import org.eclipse.smarthome.core.library.types.RawType;
+import org.openhab.binding.emby.internal.model.EmbyPlayStateModel;
 import org.openhab.binding.emby.internal.protocol.EmbyConnection;
 
 /**
@@ -75,4 +76,6 @@ public interface EmbyEventListener extends EventListener {
     void updateDuration(long duration);
 
     void updatePrimaryImageURL(String imageURL);
+
+    public void handleEvent(EmbyPlayStateModel playstate, String hostname, int embyport);
 }

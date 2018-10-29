@@ -13,16 +13,17 @@ Import-Package: com.google.gson,com.google.gson.annotations,com.google
  notations,org.eclipse.jetty.websocket.api.extensions,org.eclipse.jett
  y.websocket.api.util,org.eclipse.jetty.websocket.client,org.eclipse.j
  etty.websocket.common,org.eclipse.smarthome.config.core,org.eclipse.s
- marthome.core.cache,org.eclipse.smarthome.core.library.types,org.ecli
- pse.smarthome.core.library.unit,org.eclipse.smarthome.core.net,org.ec
- lipse.smarthome.core.thing,org.eclipse.smarthome.core.thing.binding,o
- rg.eclipse.smarthome.core.thing.binding.builder,org.eclipse.smarthome
- .core.thing.type,org.eclipse.smarthome.core.types,org.eclipse.smartho
- me.core.util,org.eclipse.smarthome.io.net.http,org.osgi.dto,org.osgi.
- service.component,org.slf4j
+ marthome.config.discovery,org.eclipse.smarthome.core.cache,org.eclips
+ e.smarthome.core.library.types,org.eclipse.smarthome.core.library.uni
+ t,org.eclipse.smarthome.core.net,org.eclipse.smarthome.core.thing,org
+ .eclipse.smarthome.core.thing.binding,org.eclipse.smarthome.core.thin
+ g.binding.builder,org.eclipse.smarthome.core.thing.type,org.eclipse.s
+ marthome.core.types,org.eclipse.smarthome.core.util,org.eclipse.smart
+ home.io.net.http,org.osgi.dto,org.osgi.framework,org.osgi.service.com
+ ponent,org.slf4j
 Service-Component: OSGI-INF/*.xml
 Export-Package: org.openhab.binding.emby
 Bundle-Name: Emby Binding
-Bundle-Version: 2.4.0.201810170019
+Bundle-Version: 2.4.0.201810290243
 Bundle-ClassPath: .
 

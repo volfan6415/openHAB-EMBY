@@ -7,13 +7,12 @@
       <message tool="checkstyle" line="0" message="File does not end with a newline." priority="3" rule="NewlineAtEndOfFileCheck" category="style"/>
    </file>
 
-   <file name=".binding.emby\ESH-INF\thing\thing-types.xml">
-      <message tool="checkstyle" line="13" message="There were whitespace characters used for indentation. Please use tab characters instead" priority="2" rule="OnlyTabIndentationInXmlFilesCheck" category="style"/>
-   </file>
+
    <file name=".binding.emby\META-INF\MANIFEST.MF">
-      <message tool="checkstyle" line="44" message="The exported package `org.openhab.binding.emby` is not imported" priority="2" rule="ImportExportedPackagesCheck" category="style"/>
-   <message tool="checkstyle" line="46" message="The exported package `org.openhab.binding.emby` is not imported" priority="2" rule="ImportExportedPackagesCheck" category="style"/>
+      <message tool="checkstyle" line="46" message="The exported package `org.openhab.binding.emby` is not imported" priority="2" rule="ImportExportedPackagesCheck" category="style"/>
    </file>
+
+
 
 
 
@@ -21,12 +20,10 @@
       <message tool="checkstyle" line="0" message="File does not end with a newline." priority="3" rule="NewlineAtEndOfFileCheck" category="style"/>
    </file>
 
-
    <file name="org.openhab.binding.emby.internal.discovery.EmbyClientDiscoveryService.java">
       <message tool="checkstyle" line="0" message="File does not end with a newline." priority="3" rule="NewlineAtEndOfFileCheck" category="style"/>
       <message tool="checkstyle" line="44" message="An author tag is missing" priority="1" rule="AuthorTagCheck" category="style"/>
       <message tool="checkstyle" line="100" message="Remove empty line before closing brace" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
-   <message tool="checkstyle" line="107" message="Remove empty line before closing brace" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
    </file>
    <file name="org.openhab.binding.emby.internal.discovery.EmbyDiscoveryService.java">
       <message tool="checkstyle" line="0" message="File does not end with a newline." priority="3" rule="NewlineAtEndOfFileCheck" category="style"/>
@@ -34,9 +31,6 @@
       <message tool="checkstyle" line="92" message="Remove empty line after opening brace" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
       <message tool="checkstyle" line="174" message="Remove empty line before closing brace" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
       <message tool="checkstyle" line="205" message="Remove empty line before closing brace" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
-   <message tool="checkstyle" line="97" message="Remove empty line after opening brace" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
-      <message tool="checkstyle" line="179" message="Remove empty line before closing brace" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
-      <message tool="checkstyle" line="210" message="Remove empty line before closing brace" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
    </file>
 
    <file name="org.openhab.binding.emby.internal.EmbyBridgeListener.java">
@@ -46,17 +40,7 @@
 
    <file name="org.openhab.binding.emby.internal.EmbyEventListener.java">
       <message tool="checkstyle" line="0" message="File does not end with a newline." priority="3" rule="NewlineAtEndOfFileCheck" category="style"/>
-      <message tool="checkstyle" line="20" message="First javadoc author should have &#34;Initial contribution&#34; contribution description." priority="2" rule="AuthorContributionDescriptionCheck" category="style"/>
-   <message tool="checkstyle" line="21" message="First javadoc author should have &#34;Initial contribution&#34; contribution description." priority="2" rule="AuthorContributionDescriptionCheck" category="style"/>
-   </file>
-   <file name="org.openhab.binding.emby.internal.EmbyHandler.java">
-      <message tool="checkstyle" line="79" message="Comment matches to-do format '(TODO)|(FIXME)'." priority="3" rule="TodoCommentCheck" category="style"/>
-      <message tool="checkstyle" line="82" message="Comment matches to-do format '(TODO)|(FIXME)'." priority="3" rule="TodoCommentCheck" category="style"/>
-      <message tool="checkstyle" line="127" message="Remove empty line before closing brace" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
-      <message tool="checkstyle" line="135" message="Remove empty line before closing brace" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
-      <message tool="checkstyle" line="143" message="Remove empty line after opening brace" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
-   <message tool="pmd" line="118" message="&#xA;Avoid empty if statements&#xA;" priority="3" rule="EmptyIfStmt" rule_url="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/empty.html#EmptyIfStmt" category="empty code"/>
-      <message tool="pmd" line="142" message="&#xA;Avoid empty try blocks&#xA;" priority="3" rule="EmptyTryBlock" rule_url="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/empty.html#EmptyTryBlock" category="empty code"/>
+      <message tool="checkstyle" line="21" message="First javadoc author should have &#34;Initial contribution&#34; contribution description." priority="2" rule="AuthorContributionDescriptionCheck" category="style"/>
    </file>
 
    <file name="org.openhab.binding.emby.internal.handler.EmbyBridgeHandler.java">
@@ -90,17 +74,7 @@
    </file>
    <file name="org.openhab.binding.emby.internal.model.EmbyPlayStateModel.java">
       <message tool="checkstyle" line="0" message="File does not end with a newline." priority="3" rule="NewlineAtEndOfFileCheck" category="style"/>
-      <message tool="checkstyle" line="67" message="Remove empty line" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
-      <message tool="checkstyle" line="81" message="Remove empty line" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
-   <message tool="pmd" line="70" message="&#xA;Avoid catching NullPointerException; consider removing the cause of the NPE.&#xA;" priority="2" rule="AvoidCatchingNPE" rule_url="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/strictexception.html#AvoidCatchingNPE" category="strict exceptions"/>
-      <message tool="pmd" line="133" message="&#xA;Avoid catching NullPointerException; consider removing the cause of the NPE.&#xA;" priority="2" rule="AvoidCatchingNPE" rule_url="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/strictexception.html#AvoidCatchingNPE" category="strict exceptions"/>
-      <message tool="pmd" line="144" message="&#xA;Avoid catching NullPointerException; consider removing the cause of the NPE.&#xA;" priority="2" rule="AvoidCatchingNPE" rule_url="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/strictexception.html#AvoidCatchingNPE" category="strict exceptions"/>
-   <message tool="checkstyle" line="75" message="Remove empty line" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
-      <message tool="checkstyle" line="89" message="Remove empty line" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
-   <message tool="pmd" line="78" message="&#xA;Avoid catching NullPointerException; consider removing the cause of the NPE.&#xA;" priority="2" rule="AvoidCatchingNPE" rule_url="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/strictexception.html#AvoidCatchingNPE" category="strict exceptions"/>
-      <message tool="pmd" line="155" message="&#xA;Avoid catching NullPointerException; consider removing the cause of the NPE.&#xA;" priority="2" rule="AvoidCatchingNPE" rule_url="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/strictexception.html#AvoidCatchingNPE" category="strict exceptions"/>
-   <message tool="pmd" line="154" message="&#xA;Avoid catching NullPointerException; consider removing the cause of the NPE.&#xA;" priority="2" rule="AvoidCatchingNPE" rule_url="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/strictexception.html#AvoidCatchingNPE" category="strict exceptions"/>
-   <message tool="checkstyle" line="86" message="Remove empty line" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+      <message tool="checkstyle" line="86" message="Remove empty line" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
    <message tool="pmd" line="76" message="&#xA;Avoid catching NullPointerException; consider removing the cause of the NPE.&#xA;" priority="2" rule="AvoidCatchingNPE" rule_url="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/strictexception.html#AvoidCatchingNPE" category="strict exceptions"/>
       <message tool="pmd" line="151" message="&#xA;Avoid catching NullPointerException; consider removing the cause of the NPE.&#xA;" priority="2" rule="AvoidCatchingNPE" rule_url="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/strictexception.html#AvoidCatchingNPE" category="strict exceptions"/>
    </file>
@@ -108,7 +82,7 @@
       <message tool="checkstyle" line="0" message="File does not end with a newline." priority="3" rule="NewlineAtEndOfFileCheck" category="style"/>
       <message tool="checkstyle" line="18" message="First javadoc author should have &#34;Initial contribution&#34; contribution description." priority="2" rule="AuthorContributionDescriptionCheck" category="style"/>
       <message tool="checkstyle" line="21" message="Name 'nowPlayingItem' must match pattern '^[A-Z][a-zA-Z0-9]*$'." priority="3" rule="TypeNameCheck" category="style"/>
-   <message tool="checkstyle" line="42" message="Remove empty line" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+      <message tool="checkstyle" line="42" message="Remove empty line" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
    </file>
    <file name="org.openhab.binding.emby.internal.protocol.EmbyClientSocket.java">
       <message tool="checkstyle" line="0" message="File does not end with a newline." priority="3" rule="NewlineAtEndOfFileCheck" category="style"/>
@@ -122,14 +96,9 @@
    </file>
    <file name="org.openhab.binding.emby.internal.protocol.EmbyConnection.java">
       <message tool="checkstyle" line="0" message="File does not end with a newline." priority="3" rule="NewlineAtEndOfFileCheck" category="style"/>
-      <message tool="checkstyle" line="38" message="First javadoc author should have &#34;Initial contribution&#34; contribution description." priority="2" rule="AuthorContributionDescriptionCheck" category="style"/>
-      <message tool="checkstyle" line="156" message="Remove empty line" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
-      <message tool="checkstyle" line="168" message="Remove empty line" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
-      <message tool="checkstyle" line="189" message="Remove empty line" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
-   <message tool="checkstyle" line="191" message="Remove empty line" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
-   <message tool="checkstyle" line="24" message="First javadoc author should have &#34;Initial contribution&#34; contribution description." priority="2" rule="AuthorContributionDescriptionCheck" category="style"/>
+      <message tool="checkstyle" line="24" message="First javadoc author should have &#34;Initial contribution&#34; contribution description." priority="2" rule="AuthorContributionDescriptionCheck" category="style"/>
    </file>
-<file name="org.openhab.binding.emby.internal.util.EmbySelectorUtil.java">
+   <file name="org.openhab.binding.emby.internal.util.EmbySelectorUtil.java">
       <message tool="checkstyle" line="0" message="File does not end with a newline." priority="3" rule="NewlineAtEndOfFileCheck" category="style"/>
       <message tool="checkstyle" line="1" message="Header is missing" priority="1" rule="ParameterizedRegexpHeaderCheck" category="style"/>
       <message tool="checkstyle" line="3" message="An author tag is missing" priority="1" rule="AuthorTagCheck" category="style"/>

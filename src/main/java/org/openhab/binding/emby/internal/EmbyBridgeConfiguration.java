@@ -9,13 +9,13 @@
 package org.openhab.binding.emby.internal;
 
 /**
- * The {@link EmbyConfiguration} class contains fields mapping thing configuration parameters.
+ * The {@link EmbyBridgeConfiguration} class contains fields mapping thing configuration parameters.
  *
  * @author Zachary Christiansen - Initial contribution
  */
-public class EmbyConfiguration {
+public class EmbyBridgeConfiguration {
 
-    public String deviceID;
+    
     public String api;
 
     private String ipAddress;

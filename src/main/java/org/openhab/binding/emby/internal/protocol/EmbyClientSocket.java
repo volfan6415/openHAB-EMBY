@@ -156,7 +156,7 @@ public class EmbyClientSocket {
 
         @OnWebSocketClose
         public void onClose(int statusCode, String reason) {
-            logger.debug("Closing a WebSocket due to {}", reason);
+            logger.debug("Closing a WebSocket due to {} with status code", reason, Integer.toString(statusCode));
             session = null;
             connected = false;
             if (eventHandler != null) {
