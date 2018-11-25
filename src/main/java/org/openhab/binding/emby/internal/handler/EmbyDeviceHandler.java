@@ -289,6 +289,13 @@ public class EmbyDeviceHandler extends BaseThingHandler implements EmbyEventList
                     updateShowTitle("");
                 } else {
 
+                    if (playstate.getEmbyPlayStatePausedState()) {
+                        updateState(EmbyState.PAUSE);
+                    } else {
+                        updateState(EmbyState.PLAY);
+
+                    }
+
                     updatePrimaryImageURL(imageURI.toString());
                     updateMuted(playstate.getEmbyMuteSate());
                     updateShowTitle(playstate.getNowPlayingName());
@@ -299,13 +306,6 @@ public class EmbyDeviceHandler extends BaseThingHandler implements EmbyEventList
             } catch (URISyntaxException e) {
                 logger.debug("unable to create image url for: {} due to exception: {} ", playstate.getDeviceName(),
                         e.toString());
-            }
-
-            if (playstate.getEmbyPlayStatePausedState()) {
-                updateState(EmbyState.PAUSE);
-            } else {
-                updateState(EmbyState.PLAY);
-
             }
 
         }

@@ -104,7 +104,8 @@ public class EmbyBridgeHandler extends BaseBridgeHandler implements EmbyBridgeLi
                 } else {
                     connection.connect(host, getIntConfigParameter(WS_PORT_PARAMETER, 8096), getDeviceID(),
                             (String) this.getConfig().get(API_KEY), scheduler,
-                            getIntConfigParameter(REFRESH_PARAMETER, 10000));
+                            getIntConfigParameter(REFRESH_PARAMETER, 10000),
+                            getIntConfigParameter(WS_BUFFER_SIZE, 100000));
 
                     connectionCheckerFuture = scheduler.scheduleWithFixedDelay(() -> {
                         if (connection.checkConnection()) {

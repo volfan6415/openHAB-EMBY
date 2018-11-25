@@ -13,7 +13,12 @@
 				<label>API Key</label>
 				<description>This is the API ket generated from EMBY used for Authorization.</description>
 			</parameter>
-
+            <parameter name="buffer_size" type="integer">
+                <label>Web Socket Buffer Size</label>
+                <description>Here you can define a custom size for the websocket buffer size. Default is 100000</description>
+                <advanced>true</advanced>
+            </parameter>
+            
 			<parameter name="ipAddress" type="text" required="true">
 				<label>ipAddress</label>
 				<description>This is the ip address of the EMBY Server.</description>
@@ -101,17 +106,17 @@
 			<parameter name="imageurl_type" type="text">
 				<default>Primary</default>
 				<options>
-					<option value="String">Primary</option>
-					<option value="String">Art</option>
-					<option value="String">Backdrop</option>
-					<option value="String">Banner</option>
-					<option value="String">Logo</option>
-					<option value="String">Thumb</option>
-					<option value="String">Disc</option>
-					<option value="String">Box</option>
-					<option value="String">Screenshot</option>
-					<option value="String">Menu</option>
-					<option value="String">Chapter</option>
+					<option value="Primary">Primary</option>
+					<option value="Art">Art</option>
+					<option value="Backdrop">Backdrop</option>
+					<option value="Banner">Banner</option>
+					<option value="Logo">Logo</option>
+					<option value="Thumb">Thumb</option>
+					<option value="Disc">Disc</option>
+					<option value="Box">Box</option>
+					<option value="Screenshot">Screenshot</option>
+					<option value="Menu">Menu</option>
+					<option value="Chapter">Chapter</option>
 				</options>
 			</parameter>
 		</config-description>

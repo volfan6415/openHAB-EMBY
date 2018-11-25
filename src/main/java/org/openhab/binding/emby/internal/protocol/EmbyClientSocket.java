@@ -58,14 +58,17 @@ public class EmbyClientSocket {
     private URI uri;
     private Session session;
     private WebSocketClient client;
+    private int bufferSize;
 
     private final EmbyClientSocketEventListener eventHandler;
 
-    public EmbyClientSocket(EmbyClientSocketEventListener eventHandler, URI uri, ScheduledExecutorService scheduler) {
+    public EmbyClientSocket(EmbyClientSocketEventListener eventHandler, URI uri, ScheduledExecutorService scheduler,
+            int buffersize) {
         this.eventHandler = eventHandler;
         this.uri = uri;
         client = new WebSocketClient();
         this.scheduler = scheduler;
+        this.bufferSize = buffersize;
     }
 
     /**
@@ -80,6 +83,7 @@ public class EmbyClientSocket {
         }
         if (!client.isStarted()) {
             client.start();
+            client.setMaxTextMessageBufferSize(bufferSize);
         }
         EmbyWebSocketListener socket = new EmbyWebSocketListener();
         ClientUpgradeRequest request = new ClientUpgradeRequest();

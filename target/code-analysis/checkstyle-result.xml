@@ -11,6 +11,7 @@
 <file name="C:\OPENHABDEV\openhab2-master2\git\openhab2-addons\addons\binding\org.openhab.binding.emby\ESH-INF\binding\binding.xml">
 </file>
 <file name="C:\OPENHABDEV\openhab2-master2\git\openhab2-addons\addons\binding\org.openhab.binding.emby\ESH-INF\thing\thing-types.xml">
+<error line="16" severity="warning" message="There were whitespace characters used for indentation. Please use tab characters instead" source="org.openhab.tools.analysis.checkstyle.OnlyTabIndentationInXmlFilesCheck"/>
 </file>
 <file name="C:\OPENHABDEV\openhab2-master2\git\openhab2-addons\addons\binding\org.openhab.binding.emby\META-INF\MANIFEST.MF">
 <error line="46" severity="warning" message="The exported package `org.openhab.binding.emby` is not imported" source="org.openhab.tools.analysis.checkstyle.ImportExportedPackagesCheck"/>
@@ -57,10 +58,10 @@
 <file name="C:\OPENHABDEV\openhab2-master2\git\openhab2-addons\addons\binding\org.openhab.binding.emby\src\main\java\org\openhab\binding\emby\internal\handler\EmbyBridgeHandler.java">
 <error line="71" severity="info" message="Comment matches to-do format &apos;(TODO)|(FIXME)&apos;." source="com.puppycrawl.tools.checkstyle.checks.TodoCommentCheck"/>
 <error line="74" severity="info" message="Comment matches to-do format &apos;(TODO)|(FIXME)&apos;." source="com.puppycrawl.tools.checkstyle.checks.TodoCommentCheck"/>
-<error line="119" severity="info" message="Remove empty line before closing brace" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
-<error line="129" severity="info" message="Remove empty line after opening brace" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
-<error line="146" severity="info" message="Remove empty line before closing brace" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
-<error line="154" severity="info" message="Remove empty line after opening brace" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+<error line="120" severity="info" message="Remove empty line before closing brace" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+<error line="130" severity="info" message="Remove empty line after opening brace" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+<error line="147" severity="info" message="Remove empty line before closing brace" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+<error line="155" severity="info" message="Remove empty line after opening brace" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
 </file>
 <file name="C:\OPENHABDEV\openhab2-master2\git\openhab2-addons\addons\binding\org.openhab.binding.emby\src\main\java\org\openhab\binding\emby\internal\handler\EmbyDeviceHandler.java">
 <error line="78" severity="info" message="Comment matches to-do format &apos;(TODO)|(FIXME)&apos;." source="com.puppycrawl.tools.checkstyle.checks.TodoCommentCheck"/>
@@ -93,8 +94,8 @@
 <file name="C:\OPENHABDEV\openhab2-master2\git\openhab2-addons\addons\binding\org.openhab.binding.emby\src\main\java\org\openhab\binding\emby\internal\protocol\EmbyClientSocket.java">
 <error line="0" severity="info" message="File does not end with a newline." source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
 <error line="41" severity="warning" message="First javadoc author should have &quot;Initial contribution&quot; contribution description." source="org.openhab.tools.analysis.checkstyle.AuthorContributionDescriptionCheck"/>
-<error line="196" severity="info" message="Remove empty line" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
-<error line="210" severity="info" message="Remove empty line" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+<error line="200" severity="info" message="Remove empty line" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+<error line="214" severity="info" message="Remove empty line" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
 </file>
 <file name="C:\OPENHABDEV\openhab2-master2\git\openhab2-addons\addons\binding\org.openhab.binding.emby\src\main\java\org\openhab\binding\emby\internal\protocol\EmbyClientSocketEventListener.java">
 <error line="0" severity="info" message="File does not end with a newline." source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>

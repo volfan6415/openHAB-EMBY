@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pmd version="5.8.1" timestamp="2018-10-28T19:44:48.308">
+<pmd version="5.8.1" timestamp="2018-11-24T18:17:33.204">
 <file name="C:\OPENHABDEV\openhab2-master2\git\openhab2-addons\addons\binding\org.openhab.binding.emby\src\main\java\org\openhab\binding\emby\internal\handler\EmbyBridgeHandler.java">
-<violation beginline="110" endline="114" begincolumn="59" endcolumn="25" rule="EmptyIfStmt" ruleset="Empty Code" package="org.openhab.binding.emby.internal.handler" class="EmbyBridgeHandler" method="initialize" externalInfoUrl="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/empty.html#EmptyIfStmt" priority="3">
+<violation beginline="111" endline="115" begincolumn="59" endcolumn="25" rule="EmptyIfStmt" ruleset="Empty Code" package="org.openhab.binding.emby.internal.handler" class="EmbyBridgeHandler" method="initialize" externalInfoUrl="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/empty.html#EmptyIfStmt" priority="3">
 Avoid empty if statements
 </violation>
-<violation beginline="153" endline="155" begincolumn="17" endcolumn="13" rule="EmptyTryBlock" ruleset="Empty Code" package="org.openhab.binding.emby.internal.handler" class="EmbyBridgeHandler" method="updateConnectionState" externalInfoUrl="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/empty.html#EmptyTryBlock" priority="3">
+<violation beginline="154" endline="156" begincolumn="17" endcolumn="13" rule="EmptyTryBlock" ruleset="Empty Code" package="org.openhab.binding.emby.internal.handler" class="EmbyBridgeHandler" method="updateConnectionState" externalInfoUrl="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/empty.html#EmptyTryBlock" priority="3">
 Avoid empty try blocks
 </violation>
 </file>

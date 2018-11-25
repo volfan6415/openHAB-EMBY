@@ -30,9 +30,7 @@ public class EmbyConnection implements EmbyClientSocketEventListener {
     private int refreshRate;
     private String hostname;
     private int embyport;
-    private String deviceId;
     private URI wsUri;
-    private String apiKey;
     private EmbyClientSocket socket;
 
     private final EmbyBridgeListener listener;
@@ -55,17 +53,15 @@ public class EmbyConnection implements EmbyClientSocketEventListener {
     }
 
     public synchronized void connect(String hostname, int port, String deviceId, String apiKey,
-            ScheduledExecutorService scheduler, int refreshRate) {
+            ScheduledExecutorService scheduler, int refreshRate, int bufferSize) {
         this.hostname = hostname;
-        this.deviceId = deviceId;
-        this.apiKey = apiKey;
         this.embyport = port;
         this.refreshRate = refreshRate;
         try {
             close();
 
             wsUri = new URI("ws", null, hostname, port, null, "api_key=" + apiKey, null);
-            socket = new EmbyClientSocket(this, wsUri, scheduler);
+            socket = new EmbyClientSocket(this, wsUri, scheduler, bufferSize);
             checkConnection();
         } catch (URISyntaxException e) {
             logger.error("exception during constructing URI host={}, port={}", hostname, port, e);

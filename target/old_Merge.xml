@@ -9,6 +9,7 @@
 
    <file name=".binding.emby\ESH-INF\thing\thing-types.xml">
       <message tool="checkstyle" line="13" message="There were whitespace characters used for indentation. Please use tab characters instead" priority="2" rule="OnlyTabIndentationInXmlFilesCheck" category="style"/>
+   <message tool="checkstyle" line="16" message="There were whitespace characters used for indentation. Please use tab characters instead" priority="2" rule="OnlyTabIndentationInXmlFilesCheck" category="style"/>
    </file>
    <file name=".binding.emby\META-INF\MANIFEST.MF">
       <message tool="checkstyle" line="44" message="The exported package `org.openhab.binding.emby` is not imported" priority="2" rule="ImportExportedPackagesCheck" category="style"/>
@@ -68,6 +69,12 @@
       <message tool="checkstyle" line="154" message="Remove empty line after opening brace" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
    <message tool="pmd" line="110" message="&#xA;Avoid empty if statements&#xA;" priority="3" rule="EmptyIfStmt" rule_url="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/empty.html#EmptyIfStmt" category="empty code"/>
       <message tool="pmd" line="153" message="&#xA;Avoid empty try blocks&#xA;" priority="3" rule="EmptyTryBlock" rule_url="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/empty.html#EmptyTryBlock" category="empty code"/>
+   <message tool="checkstyle" line="120" message="Remove empty line before closing brace" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+      <message tool="checkstyle" line="130" message="Remove empty line after opening brace" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+      <message tool="checkstyle" line="147" message="Remove empty line before closing brace" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+      <message tool="checkstyle" line="155" message="Remove empty line after opening brace" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+   <message tool="pmd" line="111" message="&#xA;Avoid empty if statements&#xA;" priority="3" rule="EmptyIfStmt" rule_url="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/empty.html#EmptyIfStmt" category="empty code"/>
+      <message tool="pmd" line="154" message="&#xA;Avoid empty try blocks&#xA;" priority="3" rule="EmptyTryBlock" rule_url="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/empty.html#EmptyTryBlock" category="empty code"/>
    </file>
    <file name="org.openhab.binding.emby.internal.handler.EmbyDeviceHandler.java">
       <message tool="checkstyle" line="78" message="Comment matches to-do format '(TODO)|(FIXME)'." priority="3" rule="TodoCommentCheck" category="style"/>
@@ -115,6 +122,10 @@
       <message tool="checkstyle" line="41" message="First javadoc author should have &#34;Initial contribution&#34; contribution description." priority="2" rule="AuthorContributionDescriptionCheck" category="style"/>
       <message tool="checkstyle" line="196" message="Remove empty line" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
       <message tool="checkstyle" line="210" message="Remove empty line" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+   <message tool="checkstyle" line="198" message="Remove empty line" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+      <message tool="checkstyle" line="212" message="Remove empty line" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+   <message tool="checkstyle" line="200" message="Remove empty line" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+      <message tool="checkstyle" line="214" message="Remove empty line" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
    </file>
    <file name="org.openhab.binding.emby.internal.protocol.EmbyClientSocketEventListener.java">
       <message tool="checkstyle" line="0" message="File does not end with a newline." priority="3" rule="NewlineAtEndOfFileCheck" category="style"/>
