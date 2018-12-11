@@ -28,7 +28,7 @@ under the License.
       <title>File: 29,
              Errors: 0,
              Warnings: 9,
-             Infos: 38
+             Infos: 36
       </title>
             <link>${project.url}/checkstyle.html</link>
       <description>
@@ -413,7 +413,7 @@ under the License.
                   <a href="${project.url}/checkstyle.html#src.main.java.org.openhab.binding.emby.internal.handler.EmbyDeviceHandler.java">src/main/java/org/openhab/binding/emby/internal/handler/EmbyDeviceHandler.java</a>
                 </td>
                 <td>
-                  8
+                  6
                 </td>
                 <td>
                   0

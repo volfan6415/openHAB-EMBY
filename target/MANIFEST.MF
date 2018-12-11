@@ -24,6 +24,6 @@ Import-Package: com.google.gson,com.google.gson.annotations,com.google
 Service-Component: OSGI-INF/*.xml
 Export-Package: org.openhab.binding.emby
 Bundle-Name: Emby Binding
-Bundle-Version: 2.4.0.201811250216
+Bundle-Version: 2.4.0.201812110450
 Bundle-ClassPath: .
 

@@ -85,6 +85,7 @@
       <message tool="checkstyle" line="283" message="Remove empty line" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
       <message tool="checkstyle" line="291" message="Remove empty line" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
       <message tool="checkstyle" line="314" message="Remove empty line" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+   <message tool="checkstyle" line="307" message="Remove empty line" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
    <message tool="pmd" line="112" message="&#xA;Avoid empty try blocks&#xA;" priority="3" rule="EmptyTryBlock" rule_url="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/empty.html#EmptyTryBlock" category="empty code"/>
    </file>
    <file name="org.openhab.binding.emby.internal.model.EmbyDuration.java">

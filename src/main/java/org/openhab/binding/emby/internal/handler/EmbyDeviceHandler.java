@@ -278,44 +278,35 @@ public class EmbyDeviceHandler extends BaseThingHandler implements EmbyEventList
                 // if this for some reason has not been set then set it to primary to avoid null pointer access
                 imageType = "Primary";
             }
-
             try {
-
                 URI imageURI = playstate.getPrimaryImageURL(hostname, embyport, imageType);
-
                 if (imageURI.getHost().equals("NotPlaying")) {
                     updateState(EmbyState.END);
                     updatePrimaryImageURL("");
                     updateShowTitle("");
                 } else {
-
                     if (playstate.getEmbyPlayStatePausedState()) {
+                        logger.debug("The playstate for {} is being set to pause", playstate.getDeviceName());
                         updateState(EmbyState.PAUSE);
+
                     } else {
+                        logger.debug("The playstate for {} is being set to play", playstate.getDeviceName());
                         updateState(EmbyState.PLAY);
-
                     }
-
                     updatePrimaryImageURL(imageURI.toString());
                     updateMuted(playstate.getEmbyMuteSate());
                     updateShowTitle(playstate.getNowPlayingName());
                     updateCurrentTime(playstate.getNowPlayingTime().longValue());
                     updateDuration(playstate.getNowPlayingTotalTime().longValue());
                 }
-
             } catch (URISyntaxException e) {
                 logger.debug("unable to create image url for: {} due to exception: {} ", playstate.getDeviceName(),
                         e.toString());
             }
-
-        }
-
-        else {
+        } else {
 
             logger.debug("{} does not equal {} the event is for device named: {} ", playstate.getDeviceId(),
                     config.deviceID, playstate.getDeviceName());
         }
-
     }
-
 }
