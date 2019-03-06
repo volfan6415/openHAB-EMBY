@@ -48,6 +48,7 @@
 			<channel id="imageurl" typeId="imageurl" />
 			<channel id="currenttime" typeId="currenttime" />
 			<channel id="duration" typeId="duration" />
+			<channel id="mediatype" typeId="mediatype" />
 		</channels>
 		<config-description>
 			<parameter name="deviceID" type="text" required="true">
@@ -96,7 +97,12 @@
 		<description>Length of currently playing media</description>
 		<state readOnly="true" pattern="%d %unit%" />
 	</channel-type>
-
+	   <channel-type id="mediatype">
+        <item-type>String</item-type>
+        <label>Media Type</label>
+        <description>Media type of the current file</description>
+        <state readOnly="true" pattern="%s"></state>
+    </channel-type>
 	<channel-type id="imageurl">
 		<item-type>String</item-type>
 		<label>image url</label>

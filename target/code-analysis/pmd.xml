@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pmd version="5.8.1" timestamp="2018-12-10T20:52:27.555">
-<file name="C:\OPENHABDEV\openhab2-master2\git\openhab2-addons\addons\binding\org.openhab.binding.emby\src\main\java\org\openhab\binding\emby\internal\handler\EmbyBridgeHandler.java">
-<violation beginline="111" endline="115" begincolumn="59" endcolumn="25" rule="EmptyIfStmt" ruleset="Empty Code" package="org.openhab.binding.emby.internal.handler" class="EmbyBridgeHandler" method="initialize" externalInfoUrl="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/empty.html#EmptyIfStmt" priority="3">
+<pmd version="5.8.1" timestamp="2019-03-06T13:36:14.232">
+<file name="C:\OPENHABDEV\openhab-master\git\openhab2-addons\addons\binding\org.openhab.binding.emby\src\main\java\org\openhab\binding\emby\internal\handler\EmbyBridgeHandler.java">
+<violation beginline="102" endline="106" begincolumn="59" endcolumn="25" rule="EmptyIfStmt" ruleset="Empty Code" package="org.openhab.binding.emby.internal.handler" class="EmbyBridgeHandler" method="initialize" externalInfoUrl="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/empty.html#EmptyIfStmt" priority="3">
 Avoid empty if statements
 </violation>
-<violation beginline="154" endline="156" begincolumn="17" endcolumn="13" rule="EmptyTryBlock" ruleset="Empty Code" package="org.openhab.binding.emby.internal.handler" class="EmbyBridgeHandler" method="updateConnectionState" externalInfoUrl="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/empty.html#EmptyTryBlock" priority="3">
+<violation beginline="145" endline="147" begincolumn="17" endcolumn="13" rule="EmptyTryBlock" ruleset="Empty Code" package="org.openhab.binding.emby.internal.handler" class="EmbyBridgeHandler" method="updateConnectionState" externalInfoUrl="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/empty.html#EmptyTryBlock" priority="3">
 Avoid empty try blocks
 </violation>
 </file>
-<file name="C:\OPENHABDEV\openhab2-master2\git\openhab2-addons\addons\binding\org.openhab.binding.emby\src\main\java\org\openhab\binding\emby\internal\handler\EmbyDeviceHandler.java">
-<violation beginline="112" endline="114" begincolumn="17" endcolumn="13" rule="EmptyTryBlock" ruleset="Empty Code" package="org.openhab.binding.emby.internal.handler" class="EmbyDeviceHandler" method="updateConnectionState" externalInfoUrl="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/empty.html#EmptyTryBlock" priority="3">
+<file name="C:\OPENHABDEV\openhab-master\git\openhab2-addons\addons\binding\org.openhab.binding.emby\src\main\java\org\openhab\binding\emby\internal\handler\EmbyDeviceHandler.java">
+<violation beginline="104" endline="106" begincolumn="17" endcolumn="13" rule="EmptyTryBlock" ruleset="Empty Code" package="org.openhab.binding.emby.internal.handler" class="EmbyDeviceHandler" method="updateConnectionState" externalInfoUrl="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/empty.html#EmptyTryBlock" priority="3">
 Avoid empty try blocks
 </violation>
 </file>
-<file name="C:\OPENHABDEV\openhab2-master2\git\openhab2-addons\addons\binding\org.openhab.binding.emby\src\main\java\org\openhab\binding\emby\internal\model\EmbyPlayStateModel.java">
-<violation beginline="76" endline="76" begincolumn="18" endcolumn="37" rule="AvoidCatchingNPE" ruleset="Strict Exceptions" package="org.openhab.binding.emby.internal.model" class="EmbyPlayStateModel" method="compareDeviceId" externalInfoUrl="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/strictexception.html#AvoidCatchingNPE" priority="2">
+<file name="C:\OPENHABDEV\openhab-master\git\openhab2-addons\addons\binding\org.openhab.binding.emby\src\main\java\org\openhab\binding\emby\internal\model\EmbyPlayStateModel.java">
+<violation beginline="84" endline="84" begincolumn="18" endcolumn="37" rule="AvoidCatchingNPE" ruleset="Strict Exceptions" package="org.openhab.binding.emby.internal.model" class="EmbyPlayStateModel" method="compareDeviceId" externalInfoUrl="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/strictexception.html#AvoidCatchingNPE" priority="2">
 Avoid catching NullPointerException; consider removing the cause of the NPE.
 </violation>
-<violation beginline="151" endline="151" begincolumn="18" endcolumn="37" rule="AvoidCatchingNPE" ruleset="Strict Exceptions" package="org.openhab.binding.emby.internal.model" class="EmbyPlayStateModel" method="getPrimaryImageURL" externalInfoUrl="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/strictexception.html#AvoidCatchingNPE" priority="2">
+<violation beginline="159" endline="159" begincolumn="18" endcolumn="37" rule="AvoidCatchingNPE" ruleset="Strict Exceptions" package="org.openhab.binding.emby.internal.model" class="EmbyPlayStateModel" method="getPrimaryImageURL" externalInfoUrl="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/strictexception.html#AvoidCatchingNPE" priority="2">
 Avoid catching NullPointerException; consider removing the cause of the NPE.
 </violation>
 </file>

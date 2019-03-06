@@ -23,12 +23,12 @@ under the License.
     <link>${project.url}</link>
     <description>Emby Binding - Checkstyle report</description>
     <language>en-us</language>
-    <copyright>&#169;2018 openHAB.org</copyright>
+    <copyright>&#169;2019 openHAB.org</copyright>
     <item>
       <title>File: 29,
              Errors: 0,
              Warnings: 9,
-             Infos: 36
+             Infos: 48
       </title>
             <link>${project.url}/checkstyle.html</link>
       <description>
@@ -91,7 +91,7 @@ under the License.
                   <a href="${project.url}/checkstyle.html#.classpath">.classpath</a>
                 </td>
                 <td>
-                  0
+                  1
                 </td>
                 <td>
                   0
@@ -105,7 +105,7 @@ under the License.
                   <a href="${project.url}/checkstyle.html#src.main.java.org.openhab.binding.emby.internal.EmbyHandlerFactory.java">src/main/java/org/openhab/binding/emby/internal/EmbyHandlerFactory.java</a>
                 </td>
                 <td>
-                  0
+                  1
                 </td>
                 <td>
                   0
@@ -133,7 +133,7 @@ under the License.
                   <a href="${project.url}/checkstyle.html#src.main.java.org.openhab.binding.emby.internal.handler.EmbyBridgeHandler.java">src/main/java/org/openhab/binding/emby/internal/handler/EmbyBridgeHandler.java</a>
                 </td>
                 <td>
-                  6
+                  7
                 </td>
                 <td>
                   0
@@ -147,7 +147,7 @@ under the License.
                   <a href="${project.url}/checkstyle.html#ESH-INF.binding.binding.xml">ESH-INF/binding/binding.xml</a>
                 </td>
                 <td>
-                  0
+                  1
                 </td>
                 <td>
                   0
@@ -161,7 +161,7 @@ under the License.
                   <a href="${project.url}/checkstyle.html#pom.xml">pom.xml</a>
                 </td>
                 <td>
-                  0
+                  1
                 </td>
                 <td>
                   0
@@ -175,7 +175,7 @@ under the License.
                   <a href="${project.url}/checkstyle.html#src.main.java.org.openhab.binding.emby.internal.EmbyDeviceConfiguration.java">src/main/java/org/openhab/binding/emby/internal/EmbyDeviceConfiguration.java</a>
                 </td>
                 <td>
-                  0
+                  1
                 </td>
                 <td>
                   0
@@ -189,7 +189,7 @@ under the License.
                   <a href="${project.url}/checkstyle.html#src.main.java.org.openhab.binding.emby.internal.EmbyBridgeConfiguration.java">src/main/java/org/openhab/binding/emby/internal/EmbyBridgeConfiguration.java</a>
                 </td>
                 <td>
-                  0
+                  1
                 </td>
                 <td>
                   0
@@ -259,7 +259,7 @@ under the License.
                   <a href="${project.url}/checkstyle.html#META-INF.MANIFEST.MF">META-INF/MANIFEST.MF</a>
                 </td>
                 <td>
-                  0
+                  1
                 </td>
                 <td>
                   1
@@ -315,7 +315,7 @@ under the License.
                   <a href="${project.url}/checkstyle.html#src.main.java.org.openhab.binding.emby.EmbyBindingConstants.java">src/main/java/org/openhab/binding/emby/EmbyBindingConstants.java</a>
                 </td>
                 <td>
-                  0
+                  1
                 </td>
                 <td>
                   0
@@ -385,7 +385,7 @@ under the License.
                   <a href="${project.url}/checkstyle.html#OSGI-INF..gitignore">OSGI-INF/.gitignore</a>
                 </td>
                 <td>
-                  0
+                  1
                 </td>
                 <td>
                   0
@@ -413,7 +413,7 @@ under the License.
                   <a href="${project.url}/checkstyle.html#src.main.java.org.openhab.binding.emby.internal.handler.EmbyDeviceHandler.java">src/main/java/org/openhab/binding/emby/internal/handler/EmbyDeviceHandler.java</a>
                 </td>
                 <td>
-                  6
+                  7
                 </td>
                 <td>
                   0
@@ -427,7 +427,7 @@ under the License.
                   <a href="${project.url}/checkstyle.html#ESH-INF.thing.thing-types.xml">ESH-INF/thing/thing-types.xml</a>
                 </td>
                 <td>
-                  0
+                  1
                 </td>
                 <td>
                   1

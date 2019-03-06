@@ -1,19 +1,19 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <units size='1'>
-  <unit id='org.openhab.binding.emby' version='2.4.0.201812110450' generation='2'>
-    <update id='org.openhab.binding.emby' range='[0.0.0,2.4.0.201812110450)' severity='0'/>
+  <unit id='org.openhab.binding.emby' version='2.5.0.201903061935' generation='2'>
+    <update id='org.openhab.binding.emby' range='[0.0.0,2.5.0.201903061935)' severity='0'/>
     <properties size='5'>
       <property name='org.eclipse.equinox.p2.name' value='Emby Binding'/>
       <property name='org.eclipse.equinox.p2.provider' value='openHAB'/>
       <property name='maven-groupId' value='org.openhab.binding'/>
       <property name='maven-artifactId' value='org.openhab.binding.emby'/>
-      <property name='maven-version' value='2.4.0-SNAPSHOT'/>
+      <property name='maven-version' value='2.5.0-SNAPSHOT'/>
     </properties>
     <provides size='5'>
-      <provided namespace='org.eclipse.equinox.p2.iu' name='org.openhab.binding.emby' version='2.4.0.201812110450'/>
-      <provided namespace='osgi.bundle' name='org.openhab.binding.emby' version='2.4.0.201812110450'/>
+      <provided namespace='org.eclipse.equinox.p2.iu' name='org.openhab.binding.emby' version='2.5.0.201903061935'/>
+      <provided namespace='osgi.bundle' name='org.openhab.binding.emby' version='2.5.0.201903061935'/>
       <provided namespace='java.package' name='org.openhab.binding.emby' version='0.0.0'/>
-      <provided namespace='osgi.identity' name='org.openhab.binding.emby' version='2.4.0.201812110450'>
+      <provided namespace='osgi.identity' name='org.openhab.binding.emby' version='2.5.0.201903061935'>
         <properties size='1'>
           <property name='type' value='osgi.bundle'/>
         </properties>
@@ -57,13 +57,13 @@
       <requiredProperties namespace='osgi.ee' match='(&amp;(osgi.ee=JavaSE)(version=1.8))'/>
     </requires>
     <artifacts size='1'>
-      <artifact classifier='osgi.bundle' id='org.openhab.binding.emby' version='2.4.0.201812110450'/>
+      <artifact classifier='osgi.bundle' id='org.openhab.binding.emby' version='2.5.0.201903061935'/>
     </artifacts>
     <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
     <touchpointData size='1'>
       <instructions size='1'>
         <instruction key='manifest'>
-          Bundle-SymbolicName: org.openhab.binding.emby;singleton:=true&#xA;Bundle-Version: 2.4.0.201812110450&#xA;
+          Bundle-SymbolicName: org.openhab.binding.emby;singleton:=true&#xA;Bundle-Version: 2.5.0.201903061935&#xA;
         </instruction>
       </instructions>
     </touchpointData>
