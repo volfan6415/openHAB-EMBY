@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pmd version="5.8.1" timestamp="2019-03-06T13:36:14.232">
+<pmd version="5.8.1" timestamp="2019-03-15T16:22:26.508">
 <file name="C:\OPENHABDEV\openhab-master\git\openhab2-addons\addons\binding\org.openhab.binding.emby\src\main\java\org\openhab\binding\emby\internal\handler\EmbyBridgeHandler.java">
 <violation beginline="102" endline="106" begincolumn="59" endcolumn="25" rule="EmptyIfStmt" ruleset="Empty Code" package="org.openhab.binding.emby.internal.handler" class="EmbyBridgeHandler" method="initialize" externalInfoUrl="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/empty.html#EmptyIfStmt" priority="3">
 Avoid empty if statements

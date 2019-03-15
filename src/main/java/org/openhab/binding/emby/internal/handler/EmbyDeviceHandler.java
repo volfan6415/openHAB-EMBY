@@ -242,6 +242,7 @@ public class EmbyDeviceHandler extends BaseThingHandler implements EmbyEventList
             // listener.updateAlbum("");
             updateTitle("");
             updateShowTitle("");
+            updatePrimaryImageURL("");
             // listener.updateArtistList(null);
             updateMediaType("");
             // listener.updateGenreList(null);
@@ -274,8 +275,8 @@ public class EmbyDeviceHandler extends BaseThingHandler implements EmbyEventList
                 URI imageURI = playstate.getPrimaryImageURL(hostname, embyport, imageType);
                 if (imageURI.getHost().equals("NotPlaying")) {
                     updateState(EmbyState.END);
-                    updatePrimaryImageURL("");
-                    updateShowTitle("");
+                    updateState(EmbyState.STOP);
+
                 } else {
                     if (playstate.getEmbyPlayStatePausedState()) {
                         logger.debug("The playstate for {} is being set to pause", playstate.getDeviceName());
