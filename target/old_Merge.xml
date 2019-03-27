@@ -71,6 +71,25 @@
       <message tool="checkstyle" line="146" message="Remove empty line after opening brace" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
    <message tool="pmd" line="102" message="&#xA;Avoid empty if statements&#xA;" priority="3" rule="EmptyIfStmt" rule_url="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/empty.html#EmptyIfStmt" category="empty code"/>
       <message tool="pmd" line="145" message="&#xA;Avoid empty try blocks&#xA;" priority="3" rule="EmptyTryBlock" rule_url="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/empty.html#EmptyTryBlock" category="empty code"/>
+   <message tool="checkstyle" line="63" message="Remove empty line after opening brace" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+      <message tool="checkstyle" line="69" message="Remove empty line before closing brace" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+      <message tool="checkstyle" line="109" message="Remove empty line before closing brace" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+      <message tool="checkstyle" line="119" message="Remove empty line after opening brace" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+      <message tool="checkstyle" line="136" message="Remove empty line before closing brace" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+      <message tool="checkstyle" line="144" message="Remove empty line after opening brace" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+      <message tool="checkstyle" line="160" message="Remove empty line before closing brace" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+   <message tool="pmd" line="100" message="&#xA;Avoid empty if statements&#xA;" priority="3" rule="EmptyIfStmt" rule_url="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/empty.html#EmptyIfStmt" category="empty code"/>
+      <message tool="pmd" line="143" message="&#xA;Avoid empty try blocks&#xA;" priority="3" rule="EmptyTryBlock" rule_url="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/empty.html#EmptyTryBlock" category="empty code"/>
+   <message tool="checkstyle" line="64" message="Remove empty line after opening brace" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+      <message tool="checkstyle" line="70" message="Remove empty line before closing brace" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+      <message tool="checkstyle" line="74" message="Remove empty line after opening brace" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+      <message tool="checkstyle" line="118" message="Remove empty line before closing brace" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+      <message tool="checkstyle" line="130" message="Remove empty line after opening brace" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+      <message tool="checkstyle" line="147" message="Remove empty line before closing brace" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+      <message tool="checkstyle" line="155" message="Remove empty line after opening brace" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+      <message tool="checkstyle" line="171" message="Remove empty line before closing brace" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+   <message tool="pmd" line="109" message="&#xA;Avoid empty if statements&#xA;" priority="3" rule="EmptyIfStmt" rule_url="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/empty.html#EmptyIfStmt" category="empty code"/>
+      <message tool="pmd" line="154" message="&#xA;Avoid empty try blocks&#xA;" priority="3" rule="EmptyTryBlock" rule_url="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/empty.html#EmptyTryBlock" category="empty code"/>
    </file>
    <file name="org.openhab.binding.emby.internal.handler.EmbyDeviceHandler.java">
       <message tool="checkstyle" line="0" message="File does not end with a newline." priority="3" rule="NewlineAtEndOfFileCheck" category="style"/>
@@ -78,11 +97,76 @@
       <message tool="checkstyle" line="73" message="Comment matches to-do format '(TODO)|(FIXME)'." priority="3" rule="TodoCommentCheck" category="style"/>
       <message tool="checkstyle" line="105" message="Remove empty line after opening brace" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
       <message tool="checkstyle" line="238" message="Remove empty line" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+      <message tool="checkstyle" line="71" message="Comment matches to-do format '(TODO)|(FIXME)'." priority="3" rule="TodoCommentCheck" category="style"/>
+      <message tool="checkstyle" line="74" message="Comment matches to-do format '(TODO)|(FIXME)'." priority="3" rule="TodoCommentCheck" category="style"/>
+      <message tool="checkstyle" line="101" message="Remove empty line before closing brace" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+      <message tool="checkstyle" line="129" message="Remove empty line after opening brace" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
       <message tool="checkstyle" line="262" message="Remove empty line" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
       <message tool="checkstyle" line="300" message="Remove empty line" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
-   <message tool="checkstyle" line="263" message="Remove empty line" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+   <message tool="checkstyle" line="102" message="Remove empty line before closing brace" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+      <message tool="checkstyle" line="130" message="Remove empty line after opening brace" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+      <message tool="checkstyle" line="263" message="Remove empty line" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
       <message tool="checkstyle" line="301" message="Remove empty line" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+   <message tool="checkstyle" line="299" message="Remove empty line" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+   <message tool="checkstyle" line="310" message="Remove empty line" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
    <message tool="pmd" line="104" message="&#xA;Avoid empty try blocks&#xA;" priority="3" rule="EmptyTryBlock" rule_url="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/empty.html#EmptyTryBlock" category="empty code"/>
+   <message tool="pmd" line="271" message="&#xA;Avoid catching NullPointerException; consider removing the cause of the NPE.&#xA;" priority="2" rule="AvoidCatchingNPE" rule_url="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/strictexception.html#AvoidCatchingNPE" category="strict exceptions"/>
+      <message tool="pmd" line="278" message="&#xA;Avoid catching NullPointerException; consider removing the cause of the NPE.&#xA;" priority="2" rule="AvoidCatchingNPE" rule_url="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/strictexception.html#AvoidCatchingNPE" category="strict exceptions"/>
+   <message tool="checkstyle" line="82" message="Remove empty line before closing brace" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+      <message tool="checkstyle" line="108" message="Remove empty line after opening brace" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+      <message tool="checkstyle" line="241" message="Remove empty line" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+      <message tool="checkstyle" line="266" message="Remove empty line" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+      <message tool="checkstyle" line="313" message="Remove empty line" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+   <message tool="pmd" line="107" message="&#xA;Avoid empty try blocks&#xA;" priority="3" rule="EmptyTryBlock" rule_url="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/empty.html#EmptyTryBlock" category="empty code"/>
+      <message tool="pmd" line="274" message="&#xA;Avoid catching NullPointerException; consider removing the cause of the NPE.&#xA;" priority="2" rule="AvoidCatchingNPE" rule_url="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/strictexception.html#AvoidCatchingNPE" category="strict exceptions"/>
+      <message tool="pmd" line="281" message="&#xA;Avoid catching NullPointerException; consider removing the cause of the NPE.&#xA;" priority="2" rule="AvoidCatchingNPE" rule_url="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/strictexception.html#AvoidCatchingNPE" category="strict exceptions"/>
+   <message tool="checkstyle" line="82" message="Remove empty line after opening brace" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+      <message tool="checkstyle" line="85" message="Remove empty line after opening brace" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+      <message tool="checkstyle" line="91" message="Remove empty line before closing brace" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+      <message tool="checkstyle" line="97" message="Remove empty line before closing brace" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+      <message tool="checkstyle" line="124" message="Remove empty line after opening brace" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+      <message tool="checkstyle" line="257" message="Remove empty line" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+      <message tool="checkstyle" line="282" message="Remove empty line" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+      <message tool="checkstyle" line="329" message="Remove empty line" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+   <message tool="pmd" line="84" message="&#xA;Avoid empty if statements&#xA;" priority="3" rule="EmptyIfStmt" rule_url="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/empty.html#EmptyIfStmt" category="empty code"/>
+      <message tool="pmd" line="123" message="&#xA;Avoid empty try blocks&#xA;" priority="3" rule="EmptyTryBlock" rule_url="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/empty.html#EmptyTryBlock" category="empty code"/>
+      <message tool="pmd" line="290" message="&#xA;Avoid catching NullPointerException; consider removing the cause of the NPE.&#xA;" priority="2" rule="AvoidCatchingNPE" rule_url="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/strictexception.html#AvoidCatchingNPE" category="strict exceptions"/>
+      <message tool="checkstyle" line="336" message="Remove empty line" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+   <message tool="pmd" line="128" message="&#xA;Avoid empty try blocks&#xA;" priority="3" rule="EmptyTryBlock" rule_url="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/empty.html#EmptyTryBlock" category="empty code"/>
+      <message tool="pmd" line="297" message="&#xA;Avoid catching NullPointerException; consider removing the cause of the NPE.&#xA;" priority="2" rule="AvoidCatchingNPE" rule_url="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/strictexception.html#AvoidCatchingNPE" category="strict exceptions"/>
+   <message tool="checkstyle" line="96" message="Remove empty line before closing brace" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+      <message tool="checkstyle" line="123" message="Remove empty line after opening brace" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+      <message tool="checkstyle" line="256" message="Remove empty line" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+      <message tool="checkstyle" line="281" message="Remove empty line" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+      <message tool="checkstyle" line="328" message="Remove empty line" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+   <message tool="pmd" line="122" message="&#xA;Avoid empty try blocks&#xA;" priority="3" rule="EmptyTryBlock" rule_url="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/empty.html#EmptyTryBlock" category="empty code"/>
+      <message tool="pmd" line="289" message="&#xA;Avoid catching NullPointerException; consider removing the cause of the NPE.&#xA;" priority="2" rule="AvoidCatchingNPE" rule_url="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/strictexception.html#AvoidCatchingNPE" category="strict exceptions"/>
+      <message tool="pmd" line="296" message="&#xA;Avoid catching NullPointerException; consider removing the cause of the NPE.&#xA;" priority="2" rule="AvoidCatchingNPE" rule_url="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/strictexception.html#AvoidCatchingNPE" category="strict exceptions"/>
+   <message tool="checkstyle" line="71" message="Comment matches to-do format '(TODO)|(FIXME)'." priority="3" rule="TodoCommentCheck" category="style"/>
+      <message tool="checkstyle" line="74" message="Comment matches to-do format '(TODO)|(FIXME)'." priority="3" rule="TodoCommentCheck" category="style"/>
+      <message tool="checkstyle" line="99" message="Remove empty line before closing brace" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+      <message tool="checkstyle" line="127" message="Remove empty line after opening brace" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+      <message tool="checkstyle" line="260" message="Remove empty line" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+      <message tool="checkstyle" line="287" message="Remove empty line" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+      <message tool="checkstyle" line="334" message="Remove empty line" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+   <message tool="pmd" line="126" message="&#xA;Avoid empty try blocks&#xA;" priority="3" rule="EmptyTryBlock" rule_url="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/empty.html#EmptyTryBlock" category="empty code"/>
+      <message tool="pmd" line="295" message="&#xA;Avoid catching NullPointerException; consider removing the cause of the NPE.&#xA;" priority="2" rule="AvoidCatchingNPE" rule_url="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/strictexception.html#AvoidCatchingNPE" category="strict exceptions"/>
+      <message tool="pmd" line="302" message="&#xA;Avoid catching NullPointerException; consider removing the cause of the NPE.&#xA;" priority="2" rule="AvoidCatchingNPE" rule_url="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/strictexception.html#AvoidCatchingNPE" category="strict exceptions"/>
+   <message tool="pmd" line="304" message="&#xA;Avoid catching NullPointerException; consider removing the cause of the NPE.&#xA;" priority="2" rule="AvoidCatchingNPE" rule_url="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/strictexception.html#AvoidCatchingNPE" category="strict exceptions"/>
+   <message tool="checkstyle" line="337" message="Remove empty line" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+   <message tool="pmd" line="129" message="&#xA;Avoid empty try blocks&#xA;" priority="3" rule="EmptyTryBlock" rule_url="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/empty.html#EmptyTryBlock" category="empty code"/>
+      <message tool="pmd" line="298" message="&#xA;Avoid catching NullPointerException; consider removing the cause of the NPE.&#xA;" priority="2" rule="AvoidCatchingNPE" rule_url="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/strictexception.html#AvoidCatchingNPE" category="strict exceptions"/>
+      <message tool="pmd" line="305" message="&#xA;Avoid catching NullPointerException; consider removing the cause of the NPE.&#xA;" priority="2" rule="AvoidCatchingNPE" rule_url="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/strictexception.html#AvoidCatchingNPE" category="strict exceptions"/>
+   <message tool="checkstyle" line="87" message="Remove empty line after opening brace" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+      <message tool="checkstyle" line="118" message="Remove empty line before closing brace" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+      <message tool="checkstyle" line="126" message="Remove empty line before closing brace" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+      <message tool="checkstyle" line="152" message="Remove empty line" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+      <message tool="checkstyle" line="285" message="Remove empty line" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+      <message tool="checkstyle" line="359" message="Remove empty line" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+   <message tool="pmd" line="121" message="&#xA;Avoid empty if statements&#xA;" priority="3" rule="EmptyIfStmt" rule_url="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/empty.html#EmptyIfStmt" category="empty code"/>
+      <message tool="pmd" line="151" message="&#xA;Avoid empty try blocks&#xA;" priority="3" rule="EmptyTryBlock" rule_url="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/empty.html#EmptyTryBlock" category="empty code"/>
+      <message tool="pmd" line="320" message="&#xA;Avoid catching NullPointerException; consider removing the cause of the NPE.&#xA;" priority="2" rule="AvoidCatchingNPE" rule_url="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/strictexception.html#AvoidCatchingNPE" category="strict exceptions"/>
+      <message tool="pmd" line="327" message="&#xA;Avoid catching NullPointerException; consider removing the cause of the NPE.&#xA;" priority="2" rule="AvoidCatchingNPE" rule_url="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/strictexception.html#AvoidCatchingNPE" category="strict exceptions"/>
    </file>
    <file name="org.openhab.binding.emby.internal.model.EmbyDuration.java">
       <message tool="checkstyle" line="0" message="File does not end with a newline." priority="3" rule="NewlineAtEndOfFileCheck" category="style"/>
@@ -95,8 +179,11 @@
    <file name="org.openhab.binding.emby.internal.model.EmbyPlayStateModel.java">
       <message tool="checkstyle" line="0" message="File does not end with a newline." priority="3" rule="NewlineAtEndOfFileCheck" category="style"/>
       <message tool="checkstyle" line="94" message="Remove empty line" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+   <message tool="checkstyle" line="144" message="Remove empty line" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
+      <message tool="checkstyle" line="163" message="Remove empty line" priority="3" rule="NoEmptyLineSeparatorCheck" category="style"/>
    <message tool="pmd" line="84" message="&#xA;Avoid catching NullPointerException; consider removing the cause of the NPE.&#xA;" priority="2" rule="AvoidCatchingNPE" rule_url="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/strictexception.html#AvoidCatchingNPE" category="strict exceptions"/>
       <message tool="pmd" line="159" message="&#xA;Avoid catching NullPointerException; consider removing the cause of the NPE.&#xA;" priority="2" rule="AvoidCatchingNPE" rule_url="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/strictexception.html#AvoidCatchingNPE" category="strict exceptions"/>
+   <message tool="pmd" line="170" message="&#xA;Avoid catching NullPointerException; consider removing the cause of the NPE.&#xA;" priority="2" rule="AvoidCatchingNPE" rule_url="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/strictexception.html#AvoidCatchingNPE" category="strict exceptions"/>
    </file>
    <file name="org.openhab.binding.emby.internal.model.nowPlayingItem.java">
       <message tool="checkstyle" line="0" message="File does not end with a newline." priority="3" rule="NewlineAtEndOfFileCheck" category="style"/>

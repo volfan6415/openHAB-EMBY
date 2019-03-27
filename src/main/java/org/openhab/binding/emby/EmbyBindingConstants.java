@@ -62,6 +62,8 @@ public class EmbyBindingConstants {
     public static final String CHANNEL_DURATION = "duration";
     public static final String CHANNEL_IMAGEURL = "imageurl";
     public static final String CHANNEL_IMAGEURL_TYPE = "imageurl_type";
+    public static final String CHANNEL_IMAGEURL_MAXWIDTH = "imageurl_maxWidth";
+    public static final String CHANNEL_IMAGEURL_MAXHEIGHT = "imageurl_maxHeight";
 
     // Module Properties
     public static final String PROPERTY_VERSION = "version";

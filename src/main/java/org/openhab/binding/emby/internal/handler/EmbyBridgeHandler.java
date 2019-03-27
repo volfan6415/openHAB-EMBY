@@ -28,6 +28,8 @@ import org.openhab.binding.emby.internal.EmbyBridgeListener;
 import org.openhab.binding.emby.internal.discovery.EmbyClientDiscoveryService;
 import org.openhab.binding.emby.internal.model.EmbyPlayStateModel;
 import org.openhab.binding.emby.internal.protocol.EmbyConnection;
+import org.openhab.binding.emby.internal.protocol.EmbyHTTPUtils;
+import org.openhab.binding.emby.internal.protocol.EmbyHttpRetryExceeded;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -47,28 +49,33 @@ public class EmbyBridgeHandler extends BaseBridgeHandler implements EmbyBridgeLi
     private ScheduledFuture<?> connectionCheckerFuture;
     private String callbackIpAddress = null;
     private EmbyClientDiscoveryService clientDiscoverySerivce;
+    private EmbyHTTPUtils httputils;
 
     public EmbyBridgeHandler(Bridge bridge, String hostAddress, String port) {
         super(bridge);
         connection = new EmbyConnection(this);
         callbackIpAddress = hostAddress + ":" + port;
         logger.debug("The callback ip address is: {}", callbackIpAddress);
+
+        httputils = new EmbyHTTPUtils(30, (String) this.getConfig().get(API_KEY), getServerAddress());
     }
 
-    @Override
-    public void handleCommand(ChannelUID channelUID, Command command) {
-        // if (CHANNEL_1.equals(channelUID.getId())) {
-        // if (command instanceof RefreshType) {
-        // TODO: handle data refresh
-        // }
+    public void sendCommand(String commandURL) {
 
-        // TODO: handle command
+        try {
+            httputils.doPost(commandURL, "", 2);
+        } catch (EmbyHttpRetryExceeded e) {
+            logger.debug("The number of retry attempts was exceeded", e.getCause());
+        }
 
-        // Note: if communication with thing fails for some reason,
-        // indicate that by setting the status with detail information:
-        // updateStatus(ThingStatus.OFFLINE, ThingStatusDetail.COMMUNICATION_ERROR,
-        // "Could not control device at IP address x.x.x.x");
-        // }
+    }
+
+    private String getServerAddress() {
+
+        String host = getConfig().get(HOST_PARAMETER).toString();
+        String port = Integer.toString(getIntConfigParameter(WS_PORT_PARAMETER, 8096));
+
+        return host + ":" + port;
     }
 
     private int getIntConfigParameter(String key, int defaultValue) {
@@ -117,6 +124,8 @@ public class EmbyBridgeHandler extends BaseBridgeHandler implements EmbyBridgeLi
         });
     }
 
+    // this method needs to be created to create a random deviceID or have EMBY create one for the OPENHAB server
+    // right now i am faking this
     private String getDeviceID() {
 
         return "1234ikadsiffaneieen18061048";
@@ -154,5 +163,11 @@ public class EmbyBridgeHandler extends BaseBridgeHandler implements EmbyBridgeLi
 
     public void registerDeviceFoundListener(EmbyClientDiscoveryService embyClientDiscoverySerice) {
         this.clientDiscoverySerivce = embyClientDiscoverySerice;
+    }
+
+    @Override
+    public void handleCommand(ChannelUID channelUID, Command command) {
+        logger.debug("The bridge handler is read only");
+
     }
 }

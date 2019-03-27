@@ -58,6 +58,7 @@ public class EmbyDeviceHandler extends BaseThingHandler implements EmbyEventList
     private final Logger logger = LoggerFactory.getLogger(EmbyDeviceHandler.class);
 
     private EmbyDeviceConfiguration config;
+    private EmbyPlayStateModel currentPlayState = null;
 
     public EmbyDeviceHandler(Thing thing) {
         super(thing);
@@ -77,6 +78,52 @@ public class EmbyDeviceHandler extends BaseThingHandler implements EmbyEventList
         // updateStatus(ThingStatus.OFFLINE, ThingStatusDetail.COMMUNICATION_ERROR,
         // "Could not control device at IP address x.x.x.x");
         // }
+
+        // if we are in an active playstate then processs the command
+        if (!(this.currentPlayState == null)) {
+            EmbyBridgeHandler handler = (EmbyBridgeHandler) this.getBridge().getHandler();
+            String commandURL = "";
+            switch (channelUID.getId()) {
+
+                case CHANNEL_CONTROL:
+                    if (command instanceof PlayPauseType) {
+                        // if we are the unpause
+                        if (PlayPauseType.PLAY.equals(command)) {
+                            commandURL = "/Sessions/" + currentPlayState.getId() + "/Playing/Unpause";
+                            // send the pause command
+                        } else {
+                            commandURL = "/Sessions/" + currentPlayState.getId() + "/Playing/Pause";
+                        }
+                    } else {
+                        logger.debug("The channel {} receceived a command {}, this command not supported",
+                                channelUID.getAsString(), command.toString());
+                        logger.debug("The channel groupID is: {}, the ID is: {}, withoutgroup: {}  ",
+                                channelUID.getGroupId(), channelUID.getId(), channelUID.getIdWithoutGroup());
+                    }
+                    break;
+                case CHANNEL_MUTE:
+                    if (OnOffType.ON.equals(command)) {
+                        commandURL = "/Sessions/" + currentPlayState.getId() + "/Command/Mute";
+                    } else {
+                        commandURL = "/Sessions/" + currentPlayState.getId() + "/Command/Unmute";
+                    }
+                    break;
+                case CHANNEL_STOP:
+                    if (OnOffType.ON.equals(command)) {
+                        commandURL = "/Sessions/" + currentPlayState.getId() + "/Playing/Stop";
+                    } else {
+                        commandURL = "";
+                    }
+                    break;
+
+            }
+            // only send command if we have set the commandURL above
+            if (commandURL.isEmpty()) {
+            } else {
+                handler.sendCommand(commandURL);
+            }
+        }
+
     }
 
     @Override
@@ -252,6 +299,7 @@ public class EmbyDeviceHandler extends BaseThingHandler implements EmbyEventList
             updateCurrentTimePercentage(-1);
             updateCurrentTime(-1);
             updateDuration(-1);
+            this.currentPlayState = null;
         }
 
     }
@@ -259,20 +307,30 @@ public class EmbyDeviceHandler extends BaseThingHandler implements EmbyEventList
     @Override
     public void handleEvent(EmbyPlayStateModel playstate, String hostname, int embyport) {
         // check the deviceId of this handler against the deviceId of the event to see if it matches
-        if (playstate.compareDeviceId(config.deviceID)) {
 
+        if (playstate.compareDeviceId(config.deviceID)) {
+            this.currentPlayState = playstate;
             logger.debug("the deviceId for: {} matches the deviceId of the thing so we will update stringUrl",
                     playstate.getDeviceName());
-
-            String imageType = this.thing.getChannel(CHANNEL_IMAGEURL).getConfiguration().get(CHANNEL_IMAGEURL_TYPE)
-                    .toString();
-
-            if (imageType == null) {
-                // if this for some reason has not been set then set it to primary to avoid null pointer access
-                imageType = "Primary";
-            }
+            String maxWidth = null;
+            String maxHeight = null;
             try {
-                URI imageURI = playstate.getPrimaryImageURL(hostname, embyport, imageType);
+                maxWidth = this.thing.getChannel(CHANNEL_IMAGEURL).getConfiguration().get(CHANNEL_IMAGEURL_MAXWIDTH)
+                        .toString();
+            } catch (NullPointerException e) {
+                logger.debug("The maxWidth was not set so we keep value as null");
+            }
+
+            try {
+                maxHeight = this.thing.getChannel(CHANNEL_IMAGEURL).getConfiguration().get(CHANNEL_IMAGEURL_MAXHEIGHT)
+                        .toString();
+            } catch (NullPointerException e) {
+                logger.debug("The maxHeight was not set so we keep value as null");
+            }
+
+            try {
+                URI imageURI = playstate.getPrimaryImageURL(hostname, embyport, this.thing.getChannel(CHANNEL_IMAGEURL)
+                        .getConfiguration().get(CHANNEL_IMAGEURL_TYPE).toString(), maxWidth, maxHeight);
                 if (imageURI.getHost().equals("NotPlaying")) {
                     updateState(EmbyState.END);
                     updateState(EmbyState.STOP);

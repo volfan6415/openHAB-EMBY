@@ -139,7 +139,9 @@ public class EmbyPlayStateModel {
         return supportsRemoteControl;
     }
 
-    public URI getPrimaryImageURL(String embyHost, int embyPort, String embyType) throws URISyntaxException {
+    public URI getPrimaryImageURL(String embyHost, int embyPort, String embyType, String maxWidth, String maxHeight)
+            throws URISyntaxException {
+
         String imagePath = "";
         try {
             if (this.nowPlayingItem.getNowPlayingType().equalsIgnoreCase("Episode")) {
@@ -153,6 +155,15 @@ public class EmbyPlayStateModel {
             double percent = percentPlayedRounded.doubleValue();
             percent = percent * 100;
             String query = new String("PercentPlayed=" + Double.toString(percent));
+            if (!(maxWidth == null)) {
+                query = "MaxWidth=" + maxWidth + "&" + query;
+            }
+
+            if (!(maxHeight == null)) {
+
+                query = "MaxHeight=" + maxHeight + "&" + query;
+            }
+
             // http://192.168.20.152:8096/emby/Items/%7BItemid%7D/Images/Primary?PercentPlayed=47
             URI imageURI = new URI("http", null, embyHost, embyPort, imagePath, query, null);
             return imageURI;

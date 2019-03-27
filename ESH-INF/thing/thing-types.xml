@@ -125,6 +125,14 @@
 					<option value="Chapter">Chapter</option>
 				</options>
 			</parameter>
+			<parameter name="imageurl_maxHeight" type="text">
+			<label>Image Max Height</label>
+			<description>The maximum height of the image that will be retrieved.  </description>
+			</parameter>
+			<parameter name="imageurl_maxWidth" type="text">
+            <label>Image Max Width</label>
+            <description>The maximum width of the image that will be retrieved. </description>          
+            </parameter>
 		</config-description>
 	</channel-type>
 </thing:thing-descriptions>
