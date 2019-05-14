@@ -12,7 +12,7 @@
  */
 package org.openhab.binding.emby.internal.discovery;
 
-import static org.openhab.binding.emby.EmbyBindingConstants.*;
+import static org.openhab.binding.emby.internal.EmbyBindingConstants.*;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -28,6 +28,7 @@ import org.eclipse.smarthome.core.thing.ThingTypeUID;
 import org.eclipse.smarthome.core.thing.ThingUID;
 import org.openhab.binding.emby.internal.handler.EmbyBridgeHandler;
 import org.openhab.binding.emby.internal.model.EmbyPlayStateModel;
+import org.openhab.binding.emby.internal.protocol.EmbyDeviceEncoder;
 import org.osgi.service.component.annotations.Component;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -70,8 +71,8 @@ public class EmbyClientDiscoveryService extends AbstractDiscoveryService {
         logger.debug("adding new emby device");
         ThingUID thingUID = getThingUID(playstate);
         ThingTypeUID thingTypeUID = THING_TYPE_EMBY_DEVICE;
-        String modelId = playstate.getDeviceId();
-
+        EmbyDeviceEncoder encode = new EmbyDeviceEncoder();
+        String modelId = encode.encodeDeviceID(playstate.getDeviceId());
         if (thingUID != null && modelId != null) {
             ThingUID bridgeUID = embyBridgeHandler.getThing().getUID();
             Map<String, Object> properties = new HashMap<>(1);
@@ -95,7 +96,5 @@ public class EmbyClientDiscoveryService extends AbstractDiscoveryService {
         } else {
             return null;
         }
-
     }
-
 }

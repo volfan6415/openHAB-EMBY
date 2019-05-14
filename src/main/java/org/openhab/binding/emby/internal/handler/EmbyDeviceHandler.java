@@ -15,7 +15,7 @@ package org.openhab.binding.emby.internal.handler;
 
 import static org.eclipse.smarthome.core.thing.ThingStatus.OFFLINE;
 import static org.eclipse.smarthome.core.thing.ThingStatusDetail.*;
-import static org.openhab.binding.emby.EmbyBindingConstants.*;
+import static org.openhab.binding.emby.internal.EmbyBindingConstants.*;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -32,6 +32,7 @@ import org.eclipse.smarthome.core.library.types.RewindFastforwardType;
 import org.eclipse.smarthome.core.library.types.StringType;
 import org.eclipse.smarthome.core.library.unit.SmartHomeUnits;
 import org.eclipse.smarthome.core.thing.Bridge;
+import org.eclipse.smarthome.core.thing.Channel;
 import org.eclipse.smarthome.core.thing.ChannelUID;
 import org.eclipse.smarthome.core.thing.Thing;
 import org.eclipse.smarthome.core.thing.ThingStatus;
@@ -46,6 +47,9 @@ import org.openhab.binding.emby.internal.model.EmbyPlayStateModel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonParser;
+
 /**
  * The {@link EmbyDeviceHandler} is responsible for handling commands, which are
  * sent to one of the channels.
@@ -59,6 +63,8 @@ public class EmbyDeviceHandler extends BaseThingHandler implements EmbyEventList
 
     private EmbyDeviceConfiguration config;
     private EmbyPlayStateModel currentPlayState = null;
+    private final JsonParser parser = new JsonParser();
+    private final Gson mapper = new Gson();
 
     public EmbyDeviceHandler(Thing thing) {
         super(thing);
@@ -66,61 +72,58 @@ public class EmbyDeviceHandler extends BaseThingHandler implements EmbyEventList
 
     @Override
     public void handleCommand(ChannelUID channelUID, Command command) {
-        // if (CHANNEL_1.equals(channelUID.getId())) {
-        // if (command instanceof RefreshType) {
-        // TODO: handle data refresh
-        // }
-
-        // TODO: handle command
-
-        // Note: if communication with thing fails for some reason,
-        // indicate that by setting the status with detail information:
-        // updateStatus(ThingStatus.OFFLINE, ThingStatusDetail.COMMUNICATION_ERROR,
-        // "Could not control device at IP address x.x.x.x");
-        // }
-
         // if we are in an active playstate then processs the command
         if (!(this.currentPlayState == null)) {
             EmbyBridgeHandler handler = (EmbyBridgeHandler) this.getBridge().getHandler();
-            String commandURL = "";
             switch (channelUID.getId()) {
-
                 case CHANNEL_CONTROL:
                     if (command instanceof PlayPauseType) {
                         // if we are the unpause
                         if (PlayPauseType.PLAY.equals(command)) {
-                            commandURL = "/Sessions/" + currentPlayState.getId() + "/Playing/Unpause";
+                            handler.sendCommand(CONTROL_SESSION + currentPlayState.getId() + CONTROL_PLAY);
                             // send the pause command
                         } else {
-                            commandURL = "/Sessions/" + currentPlayState.getId() + "/Playing/Pause";
+                            handler.sendCommand(CONTROL_SESSION + currentPlayState.getId() + CONTROL_PAUSE);
                         }
                     } else {
                         logger.debug("The channel {} receceived a command {}, this command not supported",
                                 channelUID.getAsString(), command.toString());
-                        logger.debug("The channel groupID is: {}, the ID is: {}, withoutgroup: {}  ",
-                                channelUID.getGroupId(), channelUID.getId(), channelUID.getIdWithoutGroup());
                     }
                     break;
                 case CHANNEL_MUTE:
                     if (OnOffType.ON.equals(command)) {
-                        commandURL = "/Sessions/" + currentPlayState.getId() + "/Command/Mute";
+                        handler.sendCommand(CONTROL_SESSION + currentPlayState.getId() + CONTROL_MUTE);
                     } else {
-                        commandURL = "/Sessions/" + currentPlayState.getId() + "/Command/Unmute";
+                        handler.sendCommand(CONTROL_SESSION + currentPlayState.getId() + CONTROL_UNMUTE);
                     }
                     break;
                 case CHANNEL_STOP:
                     if (OnOffType.ON.equals(command)) {
-                        commandURL = "/Sessions/" + currentPlayState.getId() + "/Playing/Stop";
+                        handler.sendCommand(CONTROL_SESSION + currentPlayState.getId() + CONTROL_STOP);
                     } else {
-                        commandURL = "";
+
                     }
                     break;
 
-            }
-            // only send command if we have set the commandURL above
-            if (commandURL.isEmpty()) {
-            } else {
-                handler.sendCommand(commandURL);
+                case CHANNEL_SENDPLAYCOMMAND:
+                    logger.debug("Sending the following payload: {} for device: {}", command.toString(),
+                            currentPlayState.getId());
+                    handler.sendCommand(CONTROL_SESSION + currentPlayState.getId() + CONTROL_SENDPLAY,
+                            command.toString());
+                    break;
+
+                case CHANNEL_GENERALCOMMAND:
+                    Channel channel = this.thing.getChannel(channelUID.getId());
+                    String commandName = channel.getConfiguration().get(CHANNEL_GENERALCOMMAND_NAME).toString();
+                    logger.debug("Sending the following command {} for device: ", commandName,
+                            currentPlayState.getId());
+                    if (OnOffType.ON.equals(command)) {
+                        handler.sendCommand(
+                                CONTROL_SESSION + currentPlayState.getId() + CONTROL_GENERALCOMMAND + commandName);
+                    } else {
+
+                    }
+                    break;
             }
         }
 
@@ -219,23 +222,8 @@ public class EmbyDeviceHandler extends BaseThingHandler implements EmbyEventList
     }
 
     @Override
-    public void updateThumbnail(RawType thumbnail) {
-        updateState(CHANNEL_THUMBNAIL, createImageState(thumbnail));
-    }
-
-    @Override
-    public void updateFanart(RawType fanart) {
-        updateState(CHANNEL_FANART, createImageState(fanart));
-    }
-
-    @Override
     public void updateCurrentTime(long currentTime) {
         updateState(CHANNEL_CURRENTTIME, createQuantityState(currentTime, SmartHomeUnits.SECOND));
-    }
-
-    @Override
-    public void updateCurrentTimePercentage(double currentTimePercentage) {
-        updateState(CHANNEL_CURRENTTIMEPERCENTAGE, createQuantityState(currentTimePercentage, SmartHomeUnits.PERCENT));
     }
 
     @Override
@@ -286,18 +274,11 @@ public class EmbyDeviceHandler extends BaseThingHandler implements EmbyEventList
         updatePlayerState(state);
         // if this is a Stop then clear everything else
         if (state == EmbyState.STOP) {
-            // listener.updateAlbum("");
+
             updateTitle("");
             updateShowTitle("");
             updatePrimaryImageURL("");
-            // listener.updateArtistList(null);
             updateMediaType("");
-            // listener.updateGenreList(null);
-            // listener.updatePVRChannel("");
-            updateThumbnail(null);
-            updateFanart(null);
-            updateCurrentTimePercentage(-1);
-            updateCurrentTime(-1);
             updateDuration(-1);
             this.currentPlayState = null;
         }

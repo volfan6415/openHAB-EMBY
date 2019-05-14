@@ -12,7 +12,7 @@
  */
 package org.openhab.binding.emby.internal.handler;
 
-import static org.openhab.binding.emby.EmbyBindingConstants.*;
+import static org.openhab.binding.emby.internal.EmbyBindingConstants.*;
 
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
@@ -60,6 +60,15 @@ public class EmbyBridgeHandler extends BaseBridgeHandler implements EmbyBridgeLi
         httputils = new EmbyHTTPUtils(30, (String) this.getConfig().get(API_KEY), getServerAddress());
     }
 
+    public void sendCommand(String commandURL, String payload) {
+        try {
+            httputils.doPost(commandURL, payload, 2);
+        } catch (EmbyHttpRetryExceeded e) {
+            logger.debug("The number of retry attempts was exceeded", e.getCause());
+        }
+
+    }
+
     public void sendCommand(String commandURL) {
 
         try {
@@ -100,16 +109,14 @@ public class EmbyBridgeHandler extends BaseBridgeHandler implements EmbyBridgeLi
                     updateStatus(ThingStatus.OFFLINE, ThingStatusDetail.CONFIGURATION_ERROR,
                             "No network address specified");
                 } else {
-                    connection.connect(host, getIntConfigParameter(WS_PORT_PARAMETER, 8096), getDeviceID(),
+                    connection.connect(host, getIntConfigParameter(WS_PORT_PARAMETER, 8096),
                             (String) this.getConfig().get(API_KEY), scheduler,
                             getIntConfigParameter(REFRESH_PARAMETER, 10000),
                             getIntConfigParameter(WS_BUFFER_SIZE, 100000));
 
                     connectionCheckerFuture = scheduler.scheduleWithFixedDelay(() -> {
                         if (connection.checkConnection()) {
-                            // updateFavoriteChannelStateDescription();
-                            // updatePVRChannelStateDescription(PVR_TV, CHANNEL_PVR_OPEN_TV);
-                            // updatePVRChannelStateDescription(PVR_RADIO, CHANNEL_PVR_OPEN_RADIO);
+
                         } else {
                             updateStatus(ThingStatus.OFFLINE, ThingStatusDetail.COMMUNICATION_ERROR,
                                     "Connection could not be established");
@@ -122,13 +129,6 @@ public class EmbyBridgeHandler extends BaseBridgeHandler implements EmbyBridgeLi
                 updateStatus(ThingStatus.OFFLINE, ThingStatusDetail.COMMUNICATION_ERROR, e.getLocalizedMessage());
             }
         });
-    }
-
-    // this method needs to be created to create a random deviceID or have EMBY create one for the OPENHAB server
-    // right now i am faking this
-    private String getDeviceID() {
-
-        return "1234ikadsiffaneieen18061048";
     }
 
     @Override

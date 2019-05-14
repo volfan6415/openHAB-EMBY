@@ -14,7 +14,6 @@ package org.openhab.binding.emby.internal;
 
 import java.util.EventListener;
 
-import org.eclipse.smarthome.core.library.types.RawType;
 import org.openhab.binding.emby.internal.model.EmbyPlayStateModel;
 import org.openhab.binding.emby.internal.protocol.EmbyConnection;
 
@@ -69,13 +68,13 @@ public interface EmbyEventListener extends EventListener {
 
     // void updatePVRChannel(final String channel);
 
-    void updateThumbnail(RawType thumbnail);
+    // void updateThumbnail(RawType thumbnail);
 
-    void updateFanart(RawType fanart);
+    // void updateFanart(RawType fanart);
 
     void updateCurrentTime(long currentTime);
 
-    void updateCurrentTimePercentage(double currentTimePercentage);
+    // void updateCurrentTimePercentage(double currentTimePercentage);
 
     void updateDuration(long duration);
 

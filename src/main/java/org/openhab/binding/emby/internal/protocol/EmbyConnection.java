@@ -56,8 +56,8 @@ public class EmbyConnection implements EmbyClientSocketEventListener {
         socket.callMethodString("SessionsStart", "0," + Integer.toString(this.refreshRate));
     }
 
-    public synchronized void connect(String hostname, int port, String deviceId, String apiKey,
-            ScheduledExecutorService scheduler, int refreshRate, int bufferSize) {
+    public synchronized void connect(String hostname, int port, String apiKey, ScheduledExecutorService scheduler,
+            int refreshRate, int bufferSize) {
         this.hostname = hostname;
         this.embyport = port;
         this.refreshRate = refreshRate;
@@ -87,7 +87,7 @@ public class EmbyConnection implements EmbyClientSocketEventListener {
 
     public boolean checkConnection() {
         if (!socket.isConnected()) {
-            logger.debug("checkConnection: try to connect to Kodi {}", wsUri);
+            logger.debug("checkConnection: try to connect to emby {}", wsUri);
             try {
                 socket.open();
                 return socket.isConnected();

@@ -17,6 +17,8 @@ import java.math.RoundingMode;
 import java.net.URI;
 import java.net.URISyntaxException;
 
+import org.openhab.binding.emby.internal.protocol.EmbyDeviceEncoder;
+
 import com.google.gson.annotations.SerializedName;
 
 /**
@@ -80,7 +82,7 @@ public class EmbyPlayStateModel {
 
     public Boolean compareDeviceId(String compareId) {
         try {
-            return deviceId.equals(compareId);
+            return getDeviceId().equals(compareId);
         } catch (NullPointerException e) {
             return false;
         }
@@ -132,7 +134,8 @@ public class EmbyPlayStateModel {
     }
 
     public String getDeviceId() {
-        return deviceId;
+        EmbyDeviceEncoder encode = new EmbyDeviceEncoder();
+        return encode.encodeDeviceID(deviceId);
     }
 
     public Boolean getSupportsRemoteControl() {

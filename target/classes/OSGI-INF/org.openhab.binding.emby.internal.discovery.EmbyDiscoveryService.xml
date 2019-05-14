@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.2.0" immediate="true" name="org.openhab.binding.emby.internal.discovery.EmbyDiscoveryService" activate="activate" deactivate="deactivate" modified="modified" configuration-pid="discovery.emby">
-    <service servicefactory="false">
-        <provide interface="org.eclipse.smarthome.config.discovery.DiscoveryService"/>
-    </service>
-    <implementation class="org.openhab.binding.emby.internal.discovery.EmbyDiscoveryService"/>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.3.0" name="org.openhab.binding.emby.internal.discovery.EmbyDiscoveryService" immediate="true" activate="activate" deactivate="deactivate" modified="modified" configuration-pid="discovery.emby">
+  <service>
+    <provide interface="org.eclipse.smarthome.config.discovery.DiscoveryService"/>
+  </service>
+  <implementation class="org.openhab.binding.emby.internal.discovery.EmbyDiscoveryService"/>
 </scr:component>

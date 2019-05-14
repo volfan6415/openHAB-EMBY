@@ -10,9 +10,10 @@
  *
  * SPDX-License-Identifier: EPL-2.0
  */
+
 package org.openhab.binding.emby.internal.discovery;
 
-import static org.openhab.binding.emby.EmbyBindingConstants.*;
+import static org.openhab.binding.emby.internal.EmbyBindingConstants.*;
 
 import java.io.IOException;
 import java.net.DatagramPacket;
@@ -36,6 +37,7 @@ import org.eclipse.smarthome.config.discovery.DiscoveryResultBuilder;
 import org.eclipse.smarthome.config.discovery.DiscoveryService;
 import org.eclipse.smarthome.core.thing.ThingTypeUID;
 import org.eclipse.smarthome.core.thing.ThingUID;
+import org.openhab.binding.emby.internal.protocol.EmbyDeviceEncoder;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Deactivate;
@@ -155,6 +157,8 @@ public class EmbyDiscoveryService extends AbstractDiscoveryService {
             String serverId = body.get("Id").getAsString();
             String serverName = body.get("Name").getAsString();
             String serverAddress = body.get("Address").getAsString();
+            EmbyDeviceEncoder encode = new EmbyDeviceEncoder();
+            serverId = encode.encodeDeviceID(serverId);
             try {
                 URI serverAddressURI = new URI(serverAddress);
                 addEMBYServer(serverAddressURI.getHost(), serverAddressURI.getPort(), serverId, serverName);
@@ -167,7 +171,6 @@ public class EmbyDiscoveryService extends AbstractDiscoveryService {
         } catch (IOException ex) {
             logger.debug(ex.getMessage());
         }
-
     }
 
     public void addEMBYServer(String hostAddress, int embyPort, String DeviceID, String Name) {
@@ -198,7 +201,5 @@ public class EmbyDiscoveryService extends AbstractDiscoveryService {
         } else {
             return null;
         }
-
     }
-
 }

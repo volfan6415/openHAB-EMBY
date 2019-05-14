@@ -12,7 +12,7 @@
  */
 package org.openhab.binding.emby.internal;
 
-import static org.openhab.binding.emby.EmbyBindingConstants.*;
+import static org.openhab.binding.emby.internal.EmbyBindingConstants.*;
 
 import java.util.Collections;
 import java.util.Dictionary;
@@ -131,5 +131,4 @@ public class EmbyHandlerFactory extends BaseThingHandlerFactory {
         this.discoveryServiceRegs.put(bridgeHandler.getThing().getUID(), bundleContext
                 .registerService(DiscoveryService.class.getName(), discoveryService, new Hashtable<String, Object>()));
     }
-
 }
