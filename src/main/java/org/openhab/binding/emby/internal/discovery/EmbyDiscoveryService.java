@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2010-2019 Contributors to the openHAB project
+ * Copyright (c) 2010-2020 Contributors to the openHAB project
  *
  * See the NOTICE file(s) distributed with this work for additional
  * information.
@@ -10,7 +10,6 @@
  *
  * SPDX-License-Identifier: EPL-2.0
  */
-
 package org.openhab.binding.emby.internal.discovery;
 
 import static org.openhab.binding.emby.internal.EmbyBindingConstants.*;
@@ -29,7 +28,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-import org.eclipse.jdt.annotation.NonNull;
+import org.eclipse.jdt.annotation.NonNullByDefault;
 import org.eclipse.jdt.annotation.Nullable;
 import org.eclipse.smarthome.config.discovery.AbstractDiscoveryService;
 import org.eclipse.smarthome.config.discovery.DiscoveryResult;
@@ -53,6 +52,7 @@ import com.google.gson.JsonObject;
  *
  * @author Zachary Christiansen - Initial contribution
  */
+@NonNullByDefault
 @Component(service = DiscoveryService.class, immediate = true, configurationPid = "discovery.emby")
 public class EmbyDiscoveryService extends AbstractDiscoveryService {
 
@@ -69,13 +69,13 @@ public class EmbyDiscoveryService extends AbstractDiscoveryService {
 
     @Activate
     @Override
-    protected void activate(@Nullable Map<@NonNull String, @Nullable Object> configProperties) {
+    protected void activate(@Nullable Map<String, @Nullable Object> configProperties) {
         super.activate(configProperties);
     }
 
     @Modified
     @Override
-    protected void modified(@Nullable Map<@NonNull String, @Nullable Object> configProperties) {
+    protected void modified(@Nullable Map<String, @Nullable Object> configProperties) {
         super.modified(configProperties);
     }
 
@@ -87,7 +87,6 @@ public class EmbyDiscoveryService extends AbstractDiscoveryService {
 
     @Override
     public void startScan() {
-
         // Find the server using UDP broadcast
         try {
             // Open a random port to send the package
@@ -146,7 +145,7 @@ public class EmbyDiscoveryService extends AbstractDiscoveryService {
             // Check if the message is correct
             String message = new String(receivePacket.getData()).trim();
 
-            logger.debug(message);
+            logger.debug("The message is {}", message);
 
             // DO SOMETHING WITH THE SERVER'S IP (for example, store it in your controller)
             receivePacket.getAddress();
@@ -169,7 +168,7 @@ public class EmbyDiscoveryService extends AbstractDiscoveryService {
             // Close the port!
             c.close();
         } catch (IOException ex) {
-            logger.debug(ex.getMessage());
+            logger.debug("The exception was: {}", ex.getMessage());
         }
     }
 

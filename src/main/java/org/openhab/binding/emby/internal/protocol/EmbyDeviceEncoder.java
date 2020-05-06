@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2010-2019 Contributors to the openHAB project
+ * Copyright (c) 2010-2020 Contributors to the openHAB project
  *
  * See the NOTICE file(s) distributed with this work for additional
  * information.
@@ -19,7 +19,7 @@ import org.slf4j.LoggerFactory;
  * EmbyClientSocket implements the low level communication to Emby through
  * websocket. Usually this communication is done through port 9090
  *
- * @author Zachary Christiansen
+ * @author Zachary Christiansen - Initial contribution
  *
  */
 public class EmbyDeviceEncoder {
@@ -27,7 +27,6 @@ public class EmbyDeviceEncoder {
     private final Logger logger = LoggerFactory.getLogger(EmbyDeviceEncoder.class);
 
     public String encodeDeviceID(String deviceID) {
-
         return deviceID.replaceAll("[^A-Za-z0-9]", "UYHJKU");
     }
 }

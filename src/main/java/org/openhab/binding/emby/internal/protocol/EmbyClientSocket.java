@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2010-2019 Contributors to the openHAB project
+ * Copyright (c) 2010-2020 Contributors to the openHAB project
  *
  * See the NOTICE file(s) distributed with this work for additional
  * information.
@@ -23,6 +23,7 @@ import java.util.concurrent.TimeUnit;
 import org.eclipse.jetty.websocket.api.Session;
 import org.eclipse.jetty.websocket.api.annotations.OnWebSocketClose;
 import org.eclipse.jetty.websocket.api.annotations.OnWebSocketConnect;
+import org.eclipse.jetty.websocket.api.annotations.OnWebSocketError;
 import org.eclipse.jetty.websocket.api.annotations.OnWebSocketMessage;
 import org.eclipse.jetty.websocket.api.annotations.WebSocket;
 import org.eclipse.jetty.websocket.client.ClientUpgradeRequest;
@@ -42,7 +43,7 @@ import com.google.gson.reflect.TypeToken;
  * EmbyClientSocket implements the low level communication to Emby through
  * websocket. Usually this communication is done through port 9090
  *
- * @author Zachary Christiansen
+ * @author Zachary Christiansen - Initial contribution
  *
  */
 public class EmbyClientSocket {
@@ -76,7 +77,7 @@ public class EmbyClientSocket {
     }
 
     /**
-     * Attempts to create a connection to the Kodi host and begin listening for
+     * Attempts to create a connection to the Emby host and begin listening for
      * updates over the async http web socket
      *
      * @throws Exception
@@ -96,7 +97,7 @@ public class EmbyClientSocket {
     }
 
     /***
-     * Close this connection to the Kodi instance
+     * Close this connection to the Emby instance
      */
     public void close() {
         // if there is an old web socket then clean up and destroy
@@ -125,7 +126,6 @@ public class EmbyClientSocket {
 
     @WebSocket
     public class EmbyWebSocketListener {
-
         @OnWebSocketConnect
         public void onConnect(Session wssession) {
             logger.debug("Connected to server");
@@ -164,7 +164,7 @@ public class EmbyClientSocket {
 
         @OnWebSocketClose
         public void onClose(int statusCode, String reason) {
-            logger.debug("Closing a WebSocket due to {} with status code", reason, Integer.toString(statusCode));
+            logger.debug("Closing a WebSocket due to {} with status code: {}", reason, Integer.toString(statusCode));
             session = null;
             connected = false;
             if (eventHandler != null) {
@@ -177,6 +177,12 @@ public class EmbyClientSocket {
                 });
             }
         }
+
+        @OnWebSocketError
+        public void onError(Throwable error) {
+            onClose(0, error.getMessage());
+        }
+
     }
 
     private void sendMessage(String str) throws IOException {
@@ -196,32 +202,25 @@ public class EmbyClientSocket {
         JsonObject payloadObject = new JsonObject();
         payloadObject.addProperty("MessageType", methodName);
         payloadObject.addProperty("Data", dataParams);
-
         return callMethod(payloadObject);
     }
 
     public JsonElement callMethod(String methodName, JsonObject params) {
-
         JsonObject payloadObject = new JsonObject();
         // payloadObject.addProperty("jsonrpc", "2.0");
         // payloadObject.addProperty("id", nextMessageId);
         payloadObject.addProperty("MessageType", methodName);
-
         if (params != null) {
             payloadObject.add("Data", params);
         }
-
         return callMethod(payloadObject);
     }
 
     public synchronized JsonElement callMethod(JsonObject payloadObject) {
-
         try {
             String message = mapper.toJson(payloadObject);
-
             commandLatch = new CountDownLatch(1);
             commandResponse = null;
-
             sendMessage(message);
             if (commandLatch.await(REQUEST_TIMEOUT_MS, TimeUnit.MILLISECONDS)) {
                 logger.debug("callMethod returns {}", commandResponse);

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2010-2019 Contributors to the openHAB project
+ * Copyright (c) 2010-2020 Contributors to the openHAB project
  *
  * See the NOTICE file(s) distributed with this work for additional
  * information.
@@ -35,22 +35,12 @@ public class EmbyBindingConstants {
     public static final String CHANNEL_VOLUME = "volume";
     public static final String CHANNEL_STOP = "stop";
     public static final String CHANNEL_CONTROL = "control";
-    public static final String CHANNEL_PLAYURI = "playuri";
-    public static final String CHANNEL_PLAYFAVORITE = "playfavorite";
-    public static final String CHANNEL_SHOWNOTIFICATION = "shownotification";
-    public static final String CHANNEL_PLAYNOTIFICATION = "playnotification";
     public static final String CHANNEL_SENDPLAYCOMMAND = "sendplay";
     public static final String CHANNEL_GENERALCOMMAND = "generalCommand";
+    public static final String CHANNEL_GENERALCOMMANDWITHARGS = "generalCommand_withArguments";
 
     public static final String CHANNEL_GENERALCOMMAND_NAME = "generalCommand_CommandName";
 
-    public static final String CHANNEL_INPUT = "input";
-    public static final String CHANNEL_INPUTTEXT = "inputtext";
-    public static final String CHANNEL_INPUTACTION = "inputaction";
-
-    public static final String CHANNEL_SYSTEMCOMMAND = "systemcommand";
-
-    public static final String CHANNEL_ARTIST = "artist";
     public static final String CHANNEL_TITLE = "title";
     public static final String CHANNEL_SHOWTITLE = "showtitle";
 
@@ -63,12 +53,9 @@ public class EmbyBindingConstants {
     public static final String CHANNEL_IMAGEURL_TYPE = "imageurl_type";
     public static final String CHANNEL_IMAGEURL_MAXWIDTH = "imageurl_maxWidth";
     public static final String CHANNEL_IMAGEURL_MAXHEIGHT = "imageurl_maxHeight";
+    public static final String CHANNEL_IMAGEURL_PERCENTPLAYED = "imageurl_PercentPlayed";
 
     // Module Properties
-    public static final String PROPERTY_VERSION = "version";
-
-    public static final String PVR_TV = "tv";
-    public static final String PVR_RADIO = "radio";
 
     public static final String HOST_PARAMETER = "ipAddress";
     public static final String WS_PORT_PARAMETER = "port";

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2010-2019 Contributors to the openHAB project
+ * Copyright (c) 2010-2020 Contributors to the openHAB project
  *
  * See the NOTICE file(s) distributed with this work for additional
  * information.
@@ -66,21 +66,17 @@ public class EmbyBridgeHandler extends BaseBridgeHandler implements EmbyBridgeLi
         } catch (EmbyHttpRetryExceeded e) {
             logger.debug("The number of retry attempts was exceeded", e.getCause());
         }
-
     }
 
     public void sendCommand(String commandURL) {
-
         try {
             httputils.doPost(commandURL, "", 2);
         } catch (EmbyHttpRetryExceeded e) {
             logger.debug("The number of retry attempts was exceeded", e.getCause());
         }
-
     }
 
     private String getServerAddress() {
-
         String host = getConfig().get(HOST_PARAMETER).toString();
         String port = Integer.toString(getIntConfigParameter(WS_PORT_PARAMETER, 8096));
 
@@ -115,14 +111,11 @@ public class EmbyBridgeHandler extends BaseBridgeHandler implements EmbyBridgeLi
                             getIntConfigParameter(WS_BUFFER_SIZE, 100000));
 
                     connectionCheckerFuture = scheduler.scheduleWithFixedDelay(() -> {
-                        if (connection.checkConnection()) {
-
-                        } else {
+                        if (!(connection.checkConnection())) {
                             updateStatus(ThingStatus.OFFLINE, ThingStatusDetail.COMMUNICATION_ERROR,
                                     "Connection could not be established");
                         }
                     }, 1, getIntConfigParameter(REFRESH_PARAMETER, 10), TimeUnit.SECONDS);
-
                 }
             } catch (Exception e) {
                 logger.debug("error during opening connection: {}", e.getMessage(), e);
@@ -144,18 +137,12 @@ public class EmbyBridgeHandler extends BaseBridgeHandler implements EmbyBridgeLi
                 logger.debug("There is no handler for thing {}", thing.getLabel());
             }
         });
-
     }
 
     @Override
     public void updateConnectionState(boolean connected) {
         if (connected) {
             updateStatus(ThingStatus.ONLINE);
-            try {
-
-            } catch (Exception e) {
-                logger.debug("error during reading version: {}", e.getMessage(), e);
-            }
         } else {
             updateStatus(ThingStatus.OFFLINE, ThingStatusDetail.COMMUNICATION_ERROR, "No connection established");
         }
@@ -168,6 +155,5 @@ public class EmbyBridgeHandler extends BaseBridgeHandler implements EmbyBridgeLi
     @Override
     public void handleCommand(ChannelUID channelUID, Command command) {
         logger.debug("The bridge handler is read only");
-
     }
 }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2010-2019 Contributors to the openHAB project
+ * Copyright (c) 2010-2020 Contributors to the openHAB project
  *
  * See the NOTICE file(s) distributed with this work for additional
  * information.
@@ -10,7 +10,6 @@
  *
  * SPDX-License-Identifier: EPL-2.0
  */
-
 package org.openhab.binding.emby.internal.handler;
 
 import static org.eclipse.smarthome.core.thing.ThingStatus.OFFLINE;
@@ -24,6 +23,7 @@ import java.util.stream.Collectors;
 
 import javax.measure.Unit;
 
+import org.eclipse.smarthome.config.core.Configuration;
 import org.eclipse.smarthome.core.library.types.OnOffType;
 import org.eclipse.smarthome.core.library.types.PlayPauseType;
 import org.eclipse.smarthome.core.library.types.QuantityType;
@@ -47,9 +47,6 @@ import org.openhab.binding.emby.internal.model.EmbyPlayStateModel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonParser;
-
 /**
  * The {@link EmbyDeviceHandler} is responsible for handling commands, which are
  * sent to one of the channels.
@@ -63,8 +60,6 @@ public class EmbyDeviceHandler extends BaseThingHandler implements EmbyEventList
 
     private EmbyDeviceConfiguration config;
     private EmbyPlayStateModel currentPlayState = null;
-    private final JsonParser parser = new JsonParser();
-    private final Gson mapper = new Gson();
 
     public EmbyDeviceHandler(Thing thing) {
         super(thing);
@@ -73,12 +68,14 @@ public class EmbyDeviceHandler extends BaseThingHandler implements EmbyEventList
     @Override
     public void handleCommand(ChannelUID channelUID, Command command) {
         // if we are in an active playstate then processs the command
+        Channel channel = this.thing.getChannel(channelUID.getId());
+        String commandName;
         if (!(this.currentPlayState == null)) {
             EmbyBridgeHandler handler = (EmbyBridgeHandler) this.getBridge().getHandler();
             switch (channelUID.getId()) {
                 case CHANNEL_CONTROL:
                     if (command instanceof PlayPauseType) {
-                        // if we are the unpause
+                        // if we are unpause
                         if (PlayPauseType.PLAY.equals(command)) {
                             handler.sendCommand(CONTROL_SESSION + currentPlayState.getId() + CONTROL_PLAY);
                             // send the pause command
@@ -100,8 +97,6 @@ public class EmbyDeviceHandler extends BaseThingHandler implements EmbyEventList
                 case CHANNEL_STOP:
                     if (OnOffType.ON.equals(command)) {
                         handler.sendCommand(CONTROL_SESSION + currentPlayState.getId() + CONTROL_STOP);
-                    } else {
-
                     }
                     break;
 
@@ -113,20 +108,24 @@ public class EmbyDeviceHandler extends BaseThingHandler implements EmbyEventList
                     break;
 
                 case CHANNEL_GENERALCOMMAND:
-                    Channel channel = this.thing.getChannel(channelUID.getId());
-                    String commandName = channel.getConfiguration().get(CHANNEL_GENERALCOMMAND_NAME).toString();
-                    logger.debug("Sending the following command {} for device: ", commandName,
+                    commandName = channel.getConfiguration().get(CHANNEL_GENERALCOMMAND_NAME).toString();
+                    logger.debug("Sending the following command {} for device: {}", commandName,
                             currentPlayState.getId());
                     if (OnOffType.ON.equals(command)) {
                         handler.sendCommand(
                                 CONTROL_SESSION + currentPlayState.getId() + CONTROL_GENERALCOMMAND + commandName);
-                    } else {
-
                     }
+                    break;
+                case CHANNEL_GENERALCOMMANDWITHARGS:
+                    commandName = channel.getConfiguration().get(CHANNEL_GENERALCOMMAND_NAME).toString();
+                    logger.debug("Sending the following command {} for device: {}", commandName,
+                            currentPlayState.getId());
+                    handler.sendCommand(
+                            CONTROL_SESSION + currentPlayState.getId() + CONTROL_GENERALCOMMAND + commandName,
+                            "Arguments:" + command + "}");
                     break;
             }
         }
-
     }
 
     @Override
@@ -151,11 +150,6 @@ public class EmbyDeviceHandler extends BaseThingHandler implements EmbyEventList
     public void updateConnectionState(boolean connected) {
         if (connected) {
             updateStatus(ThingStatus.ONLINE);
-            try {
-
-            } catch (Exception e) {
-                logger.debug("error during reading version: {}", e.getMessage(), e);
-            }
         } else {
             updateStatus(ThingStatus.OFFLINE, ThingStatusDetail.COMMUNICATION_ERROR, "No connection established");
         }
@@ -270,17 +264,17 @@ public class EmbyDeviceHandler extends BaseThingHandler implements EmbyEventList
     }
 
     private void updateState(EmbyState state) {
-
         updatePlayerState(state);
+
         // if this is a Stop then clear everything else
         if (state == EmbyState.STOP) {
-
             updateTitle("");
             updateShowTitle("");
             updatePrimaryImageURL("");
             updateMediaType("");
             updateDuration(-1);
             this.currentPlayState = null;
+            updateCurrentTime(-1);
         }
 
     }
@@ -288,13 +282,22 @@ public class EmbyDeviceHandler extends BaseThingHandler implements EmbyEventList
     @Override
     public void handleEvent(EmbyPlayStateModel playstate, String hostname, int embyport) {
         // check the deviceId of this handler against the deviceId of the event to see if it matches
-
         if (playstate.compareDeviceId(config.deviceID)) {
             this.currentPlayState = playstate;
             logger.debug("the deviceId for: {} matches the deviceId of the thing so we will update stringUrl",
                     playstate.getDeviceName());
+            Configuration config = this.thing.getChannel(CHANNEL_IMAGEURL).getConfiguration();
             String maxWidth = null;
             String maxHeight = null;
+            Boolean percentPlayed = null;
+
+            // String maxWidth = config.get(CHANNEL_IMAGEURL_MAXWIDTH).toString();
+            // String maxHeight = config.get(CHANNEL_IMAGEURL_MAXHEIGHT).toString();
+            // Boolean percentPlayed = (Boolean) config.get(CHANNEL_IMAGEURL_PERCENTPLAYED);
+            // if (percentPlayed == null) {
+            // percentPlayed = true;
+            // }
+
             try {
                 maxWidth = this.thing.getChannel(CHANNEL_IMAGEURL).getConfiguration().get(CHANNEL_IMAGEURL_MAXWIDTH)
                         .toString();
@@ -308,10 +311,19 @@ public class EmbyDeviceHandler extends BaseThingHandler implements EmbyEventList
             } catch (NullPointerException e) {
                 logger.debug("The maxHeight was not set so we keep value as null");
             }
+            try {
+                percentPlayed = (Boolean) this.thing.getChannel(CHANNEL_IMAGEURL).getConfiguration()
+                        .get(CHANNEL_IMAGEURL_PERCENTPLAYED);
+                if (percentPlayed == null) {
+                    percentPlayed = true;
+                }
+            } catch (NullPointerException e) {
+                logger.debug("The Percent Played setting was not set so we keep value as true");
+            }
 
             try {
-                URI imageURI = playstate.getPrimaryImageURL(hostname, embyport, this.thing.getChannel(CHANNEL_IMAGEURL)
-                        .getConfiguration().get(CHANNEL_IMAGEURL_TYPE).toString(), maxWidth, maxHeight);
+                URI imageURI = playstate.getPrimaryImageURL(hostname, embyport,
+                        config.get(CHANNEL_IMAGEURL_TYPE).toString(), maxWidth, maxHeight, percentPlayed);
                 if (imageURI.getHost().equals("NotPlaying")) {
                     updateState(EmbyState.END);
                     updateState(EmbyState.STOP);
@@ -337,7 +349,6 @@ public class EmbyDeviceHandler extends BaseThingHandler implements EmbyEventList
                         e.toString());
             }
         } else {
-
             logger.debug("{} does not equal {} the event is for device named: {} ", playstate.getDeviceId(),
                     config.deviceID, playstate.getDeviceName());
         }

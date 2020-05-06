@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2010-2019 Contributors to the openHAB project
+ * Copyright (c) 2010-2020 Contributors to the openHAB project
  *
  * See the NOTICE file(s) distributed with this work for additional
  * information.
@@ -48,7 +48,7 @@ public class EmbyHTTPUtils {
      * Sends a {@link doPost} request with a timeout of 30 seconds
      *
      * @param urlAddress the address to send the request
-     * @param payload    the json payload to include with the request
+     * @param payload the json payload to include with the request
      */
     private String doPost(String urlAddress, String payload) throws IOException {
         urlAddress = "http://" + hostIpPort + urlAddress;
@@ -56,7 +56,7 @@ public class EmbyHTTPUtils {
         logger.debug("The payload we want to post is: {}", payload);
         ByteArrayInputStream input = new ByteArrayInputStream(payload.getBytes(StandardCharsets.UTF_8));
         logTest = HttpUtil.executeUrl("POST", urlAddress, getHttpHeaders(), input, "application/json", requestTimeout);
-        logger.debug(logTest);
+        logger.debug("{}", logTest);
         return logTest;
     }
 
@@ -71,8 +71,8 @@ public class EmbyHTTPUtils {
      * Sends a {@link doPost} request with a timeout of 30 seconds
      *
      * @param urlAddress the address to send the request
-     * @param payload    the json payload you want to send as part of the request
-     * @param retry      the number of retries before throwing the IOexpcetion back to the handler
+     * @param payload the json payload you want to send as part of the request
+     * @param retry the number of retries before throwing the IOexpcetion back to the handler
      */
     public synchronized String doPost(String urlAddress, String payload, int retryCount) throws EmbyHttpRetryExceeded {
         String response = null;

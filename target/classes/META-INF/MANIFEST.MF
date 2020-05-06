@@ -1,19 +1,26 @@
 Manifest-Version: 1.0
 Automatic-Module-Name: org.openhab.binding.emby
-Bnd-LastModified: 1557856209410
-Bundle-Description: "This project contains the add-ons of openHAB"
+Bnd-LastModified: 1588740312614
+Bundle-Description: This project contains the official add-ons of open
+ HAB
+Bundle-Developers: openhab;email="info@openhab.org";name=openHAB;organ
+ ization=openHAB;organizationUrl="https://www.openHAB.org"
+Bundle-DocURL: https://github.com/openhab/infrastructure/org.openhab.a
+ ddons.reactor/org.openhab.addons.reactor.bundles/org.openhab.binding.
+ emby
 Bundle-License: "Eclipse Public License 2.0";link="https://www.eclipse
  .org/legal/epl-2.0/"
 Bundle-ManifestVersion: 2
 Bundle-Name: openHAB Add-ons :: Bundles :: Emby Binding
-Bundle-SCM: url="https://github.com/org.openhab.addons.reactor.bundles
- /org.openhab.binding.emby",connection="scm:git:https://github.com/org
- .openhab.addons.reactor.bundles/org.openhab.binding.emby",developer-c
- onnection="scm:git:https://github.com/org.openhab.addons.reactor.bund
- les/org.openhab.binding.emby",tag=HEAD
+Bundle-SCM: url="https://github.com/openhab/openhab-addons/org.openhab
+ .addons.reactor.bundles/org.openhab.binding.emby",connection="scm:git
+ :https://github.com/openhab/openhab-addons.git/org.openhab.addons.rea
+ ctor.bundles/org.openhab.binding.emby",developer-connection="scm:git:
+ https://github.com/openhab/openhab-addons.git/org.openhab.addons.reac
+ tor.bundles/org.openhab.binding.emby",tag=HEAD
 Bundle-SymbolicName: org.openhab.binding.emby
 Bundle-Vendor: openHAB.org
-Bundle-Version: 2.5.0.201905141750
+Bundle-Version: 2.5.5.202005060445
 Created-By: 1.8.0_151 (Oracle Corporation)
 Import-Package: org.eclipse.smarthome.config.core,org.eclipse.smarthom
  e.config.discovery,org.eclipse.smarthome.core.library.types,org.eclip
@@ -32,9 +39,10 @@ Private-Package: ESH-INF.binding,ESH-INF.thing,org.openhab.binding.emb
  nding.emby.internal.handler,org.openhab.binding.emby.internal.model,o
  rg.openhab.binding.emby.internal.protocol
 Provide-Capability: osgi.service;objectClass:List<String>="org.eclipse
- .smarthome.config.discovery.DiscoveryService",osgi.service;objectClas
- s:List<String>="org.eclipse.smarthome.core.thing.binding.ThingHandler
- Factory"
+ .smarthome.config.discovery.DiscoveryService";uses:="org.eclipse.smar
+ thome.config.discovery",osgi.service;objectClass:List<String>="org.ec
+ lipse.smarthome.core.thing.binding.ThingHandlerFactory";uses:="org.ec
+ lipse.smarthome.core.thing.binding"
 Require-Capability: osgi.service;filter:="(objectClass=org.eclipse.sma
  rthome.core.net.NetworkAddressService)";effective:=active,osgi.extend
  er;filter:="(&(osgi.extender=osgi.component)(version>=1.4.0)(!(versio
@@ -43,5 +51,5 @@ Service-Component: OSGI-INF/org.openhab.binding.emby.internal.EmbyHand
  lerFactory.xml,OSGI-INF/org.openhab.binding.emby.internal.discovery.E
  mbyClientDiscoveryService.xml,OSGI-INF/org.openhab.binding.emby.inter
  nal.discovery.EmbyDiscoveryService.xml
-Tool: Bnd-4.2.0.201903051501
+Tool: Bnd-4.3.0.201909301554
 

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd"
+    version="6.7.0" timestamp="2020-05-05T23:45:29.061">
+<file name="C:\OPENHABDEV\openhab-2-5-x\git\openhab-addons\bundles\org.openhab.binding.emby\src\main\java\org\openhab\binding\emby\internal\handler\EmbyDeviceHandler.java">
+<violation beginline="304" endline="304" begincolumn="22" endcolumn="41" rule="AvoidCatchingNPE" ruleset="Error Prone" package="org.openhab.binding.emby.internal.handler" class="EmbyDeviceHandler" method="handleEvent" externalInfoUrl="https://pmd.github.io/pmd-6.7.0/pmd_rules_java_errorprone.html#avoidcatchingnpe" priority="2">
+Avoid catching NullPointerException; consider removing the cause of the NPE.
+</violation>
+<violation beginline="311" endline="311" begincolumn="22" endcolumn="41" rule="AvoidCatchingNPE" ruleset="Error Prone" package="org.openhab.binding.emby.internal.handler" class="EmbyDeviceHandler" method="handleEvent" externalInfoUrl="https://pmd.github.io/pmd-6.7.0/pmd_rules_java_errorprone.html#avoidcatchingnpe" priority="2">
+Avoid catching NullPointerException; consider removing the cause of the NPE.
+</violation>
+<violation beginline="320" endline="320" begincolumn="22" endcolumn="41" rule="AvoidCatchingNPE" ruleset="Error Prone" package="org.openhab.binding.emby.internal.handler" class="EmbyDeviceHandler" method="handleEvent" externalInfoUrl="https://pmd.github.io/pmd-6.7.0/pmd_rules_java_errorprone.html#avoidcatchingnpe" priority="2">
+Avoid catching NullPointerException; consider removing the cause of the NPE.
+</violation>
+</file>
+<file name="C:\OPENHABDEV\openhab-2-5-x\git\openhab-addons\bundles\org.openhab.binding.emby\src\main\java\org\openhab\binding\emby\internal\model\EmbyPlayStateModel.java">
+<violation beginline="89" endline="89" begincolumn="18" endcolumn="37" rule="AvoidCatchingNPE" ruleset="Error Prone" package="org.openhab.binding.emby.internal.model" class="EmbyPlayStateModel" method="compareDeviceId" externalInfoUrl="https://pmd.github.io/pmd-6.7.0/pmd_rules_java_errorprone.html#avoidcatchingnpe" priority="2">
+Avoid catching NullPointerException; consider removing the cause of the NPE.
+</violation>
+</file>
+</pmd>

@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+<rss version="0.91">
+  <channel>
+    <title>openHAB Add-ons :: Bundles :: Emby Binding - Checkstyle report</title>
+    <link>https://github.com/openhab/infrastructure/org.openhab.addons.reactor/org.openhab.addons.reactor.bundles/org.openhab.binding.emby</link>
+    <description>openHAB Add-ons :: Bundles :: Emby Binding - Checkstyle report</description>
+    <language>en-us</language>
+    <copyright>&#169;2020 openHAB.org</copyright>
+    <item>
+      <title>File: 25,
+             Errors: 0,
+             Warnings: 19,
+             Infos: 0
+      </title>
+            <link>https://github.com/openhab/infrastructure/org.openhab.addons.reactor/org.openhab.addons.reactor.bundles/org.openhab.binding.emby/checkstyle.html</link>
+      <description>
+        <p>Click <a href="https://github.com/openhab/infrastructure/org.openhab.addons.reactor/org.openhab.addons.reactor.bundles/org.openhab.binding.emby/checkstyle.html">here</a> for the full Checkstyle report.</p>
+
+        <table summary="Files" boder="1">
+          <thead>
+            <tr>
+              <th>Files</th>
+              <th style="width:30px;"><abbr title="Info">I</abbr></th>
+              <th style="width:30px;"><abbr title="Warning">W</abbr></th>
+              <th style="width:30px;"><abbr title="Error">E</abbr></th>
+            </tr>
+          </thead>
+          <tbody>
+                          <tr>
+                <td>
+                  <a href="https://github.com/openhab/infrastructure/org.openhab.addons.reactor/org.openhab.addons.reactor.bundles/org.openhab.binding.emby/checkstyle.html#src.main.java.org.openhab.binding.emby.internal.discovery.EmbyClientDiscoveryService.java">src/main/java/org/openhab/binding/emby/internal/discovery/EmbyClientDiscoveryService.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/openhab/infrastructure/org.openhab.addons.reactor/org.openhab.addons.reactor.bundles/org.openhab.binding.emby/checkstyle.html#src.main.java.org.openhab.binding.emby.internal.model.EmbyPlayState.java">src/main/java/org/openhab/binding/emby/internal/model/EmbyPlayState.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/openhab/infrastructure/org.openhab.addons.reactor/org.openhab.addons.reactor.bundles/org.openhab.binding.emby/checkstyle.html#.classpath">.classpath</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/openhab/infrastructure/org.openhab.addons.reactor/org.openhab.addons.reactor.bundles/org.openhab.binding.emby/checkstyle.html#src.main.java.org.openhab.binding.emby.internal.EmbyHandlerFactory.java">src/main/java/org/openhab/binding/emby/internal/EmbyHandlerFactory.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/openhab/infrastructure/org.openhab.addons.reactor/org.openhab.addons.reactor.bundles/org.openhab.binding.emby/checkstyle.html#src.main.java.org.openhab.binding.emby.internal.protocol.EmbyConnection.java">src/main/java/org/openhab/binding/emby/internal/protocol/EmbyConnection.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/openhab/infrastructure/org.openhab.addons.reactor/org.openhab.addons.reactor.bundles/org.openhab.binding.emby/checkstyle.html#src.main.java.org.openhab.binding.emby.internal.handler.EmbyBridgeHandler.java">src/main/java/org/openhab/binding/emby/internal/handler/EmbyBridgeHandler.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/openhab/infrastructure/org.openhab.addons.reactor/org.openhab.addons.reactor.bundles/org.openhab.binding.emby/checkstyle.html#pom.xml">pom.xml</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/openhab/infrastructure/org.openhab.addons.reactor/org.openhab.addons.reactor.bundles/org.openhab.binding.emby/checkstyle.html#src.main.java.org.openhab.binding.emby.internal.EmbyDeviceConfiguration.java">src/main/java/org/openhab/binding/emby/internal/EmbyDeviceConfiguration.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/openhab/infrastructure/org.openhab.addons.reactor/org.openhab.addons.reactor.bundles/org.openhab.binding.emby/checkstyle.html#src.main.java.org.openhab.binding.emby.internal.EmbyBridgeConfiguration.java">src/main/java/org/openhab/binding/emby/internal/EmbyBridgeConfiguration.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/openhab/infrastructure/org.openhab.addons.reactor/org.openhab.addons.reactor.bundles/org.openhab.binding.emby/checkstyle.html#src.main.java.org.openhab.binding.emby.internal.protocol.EmbyClientSocketEventListener.java">src/main/java/org/openhab/binding/emby/internal/protocol/EmbyClientSocketEventListener.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/openhab/infrastructure/org.openhab.addons.reactor/org.openhab.addons.reactor.bundles/org.openhab.binding.emby/checkstyle.html#src.main.java.org.openhab.binding.emby.internal.protocol.EmbyHTTPUtils.java">src/main/java/org/openhab/binding/emby/internal/protocol/EmbyHTTPUtils.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/openhab/infrastructure/org.openhab.addons.reactor/org.openhab.addons.reactor.bundles/org.openhab.binding.emby/checkstyle.html#src.main.java.org.openhab.binding.emby.internal.protocol.EmbyDeviceEncoder.java">src/main/java/org/openhab/binding/emby/internal/protocol/EmbyDeviceEncoder.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/openhab/infrastructure/org.openhab.addons.reactor/org.openhab.addons.reactor.bundles/org.openhab.binding.emby/checkstyle.html#src.main.java.org.openhab.binding.emby.internal.protocol.EmbyClientSocket.java">src/main/java/org/openhab/binding/emby/internal/protocol/EmbyClientSocket.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  2
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/openhab/infrastructure/org.openhab.addons.reactor/org.openhab.addons.reactor.bundles/org.openhab.binding.emby/checkstyle.html#src.main.java.org.openhab.binding.emby.internal.protocol.EmbyHttpRetryExceeded.java">src/main/java/org/openhab/binding/emby/internal/protocol/EmbyHttpRetryExceeded.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/openhab/infrastructure/org.openhab.addons.reactor/org.openhab.addons.reactor.bundles/org.openhab.binding.emby/checkstyle.html#README.md">README.md</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/openhab/infrastructure/org.openhab.addons.reactor/org.openhab.addons.reactor.bundles/org.openhab.binding.emby/checkstyle.html#src.main.resources.ESH-INF.binding.binding.xml">src/main/resources/ESH-INF/binding/binding.xml</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/openhab/infrastructure/org.openhab.addons.reactor/org.openhab.addons.reactor.bundles/org.openhab.binding.emby/checkstyle.html#src.main.java.org.openhab.binding.emby.internal.discovery.EmbyDiscoveryService.java">src/main/java/org/openhab/binding/emby/internal/discovery/EmbyDiscoveryService.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/openhab/infrastructure/org.openhab.addons.reactor/org.openhab.addons.reactor.bundles/org.openhab.binding.emby/checkstyle.html#src.main.java.org.openhab.binding.emby.internal.EmbyBindingConstants.java">src/main/java/org/openhab/binding/emby/internal/EmbyBindingConstants.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/openhab/infrastructure/org.openhab.addons.reactor/org.openhab.addons.reactor.bundles/org.openhab.binding.emby/checkstyle.html#src.main.java.org.openhab.binding.emby.internal.model.EmbyNowPlayingItem.java">src/main/java/org/openhab/binding/emby/internal/model/EmbyNowPlayingItem.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/openhab/infrastructure/org.openhab.addons.reactor/org.openhab.addons.reactor.bundles/org.openhab.binding.emby/checkstyle.html#src.main.java.org.openhab.binding.emby.internal.model.EmbyPlayingPostJsonModel.java">src/main/java/org/openhab/binding/emby/internal/model/EmbyPlayingPostJsonModel.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/openhab/infrastructure/org.openhab.addons.reactor/org.openhab.addons.reactor.bundles/org.openhab.binding.emby/checkstyle.html#src.main.java.org.openhab.binding.emby.internal.EmbyBridgeListener.java">src/main/java/org/openhab/binding/emby/internal/EmbyBridgeListener.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/openhab/infrastructure/org.openhab.addons.reactor/org.openhab.addons.reactor.bundles/org.openhab.binding.emby/checkstyle.html#src.main.java.org.openhab.binding.emby.internal.model.EmbyPlayStateModel.java">src/main/java/org/openhab/binding/emby/internal/model/EmbyPlayStateModel.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/openhab/infrastructure/org.openhab.addons.reactor/org.openhab.addons.reactor.bundles/org.openhab.binding.emby/checkstyle.html#src.main.resources.ESH-INF.thing.thing-types.xml">src/main/resources/ESH-INF/thing/thing-types.xml</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/openhab/infrastructure/org.openhab.addons.reactor/org.openhab.addons.reactor.bundles/org.openhab.binding.emby/checkstyle.html#src.main.java.org.openhab.binding.emby.internal.EmbyEventListener.java">src/main/java/org/openhab/binding/emby/internal/EmbyEventListener.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/openhab/infrastructure/org.openhab.addons.reactor/org.openhab.addons.reactor.bundles/org.openhab.binding.emby/checkstyle.html#src.main.java.org.openhab.binding.emby.internal.handler.EmbyDeviceHandler.java">src/main/java/org/openhab/binding/emby/internal/handler/EmbyDeviceHandler.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                      </tbody>
+        </table>
+        
+      </description>
+    </item>
+  </channel>
+</rss>
+

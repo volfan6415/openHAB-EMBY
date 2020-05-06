@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2010-2019 Contributors to the openHAB project
+ * Copyright (c) 2010-2020 Contributors to the openHAB project
  *
  * See the NOTICE file(s) distributed with this work for additional
  * information.
@@ -21,7 +21,7 @@ import org.openhab.binding.emby.internal.protocol.EmbyConnection;
  * Interface which has to be implemented by a class in order to get status
  * updates from a {@link EmbyConnection}
  *
- * @author Zachary Christiansen- Initiation Contribution
+ * @author Zachary Christiansen - Initial Contribution
  */
 public interface EmbyEventListener extends EventListener {
     public enum EmbyState {

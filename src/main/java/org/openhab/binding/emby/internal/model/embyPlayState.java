@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2010-2019 Contributors to the openHAB project
+ * Copyright (c) 2010-2020 Contributors to the openHAB project
  *
  * See the NOTICE file(s) distributed with this work for additional
  * information.
@@ -19,10 +19,10 @@ import com.google.gson.annotations.SerializedName;
 /**
  * embyPlayState - part of the model for the json object received from the server
  *
- * @author Zachary Christiansen
+ * @author Zachary Christiansen - Initial Contribution
  *
  */
-public class embyPlayState {
+public class EmbyPlayState {
 
     @SerializedName("PositionTicks")
     private BigDecimal positionTicks;

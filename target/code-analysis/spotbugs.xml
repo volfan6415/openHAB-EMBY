@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<BugCollection version='3.1.12' threshold='high' effort='min'><Error></Error><Project><SrcDir>C:\OPENHABDEV\openhab-2-5-x\git\openhab-addons\bundles\org.openhab.binding.emby\src\main\java</SrcDir><SrcDir>C:\OPENHABDEV\openhab-2-5-x\git\openhab-addons\bundles\org.openhab.binding.emby\target\generated-sources\annotations</SrcDir><SrcDir>C:\OPENHABDEV\openhab-2-5-x\git\openhab-addons\bundles\org.openhab.binding.emby\src\test\java</SrcDir></Project></BugCollection>
